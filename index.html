@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Twenty's Autobody Mechanic</title>
+  <title>Twenty's Auto Body</title>
   <style>
     /* BASIC RESET */
     * {
@@ -21,7 +21,7 @@
     /* HEADER */
     header {
       background-color: #10182b;
-      padding: 20px;
+      padding: 10px; /* Reduced padding */
       text-align: center;
     }
     header h1 {
@@ -34,8 +34,8 @@
       display: flex;
       justify-content: space-around;
       align-items: flex-start;
-      padding: 20px 40px;
-      gap: 20px;
+      padding: 10px 20px; /* Reduced padding */
+      gap: 10px; /* Reduced gap between columns */
     }
 
     /* COLUMN STYLES: Wider Columns */
@@ -43,45 +43,45 @@
       background-color: #fff;
       border: 1px solid #ccc;
       border-radius: 5px;
-      padding: 15px;
+      padding: 10px; /* Reduced padding */
       min-width: 500px;
       max-width: 600px;
     }
     .column h2 {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 8px; /* Reduced margin */
       font-size: 1.2rem;
       color: #000;
     }
 
     /* SUB-HEADERS */
     .sub-header {
-      margin-top: 15px;
-      margin-bottom: 8px;
+      margin-top: 8px; /* Reduced margin-top */
+      margin-bottom: 4px; /* Reduced margin-bottom */
       font-weight: bold;
       color: #000;
       font-size: 1rem;
       border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
+      padding-bottom: 3px; /* Reduced padding-bottom */
     }
 
-    /* GRID FOR BUTTONS IN EACH SUB-SECTION (2-column grid) */
+    /* GRID FOR BUTTONS (2-COLUMN Grid for each sub-section) */
     .grid-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      margin-bottom: 20px;
+      gap: 5px;  /* Reduced gap */
+      margin-bottom: 10px; /* Reduced margin-bottom */
     }
 
-    /* UPGRADE BUTTONS: Slightly smaller */
+    /* UPGRADE BUTTONS: Slightly Smaller */
     .upgrade-btn {
       background-color: #e3e9f2;
       border: 1px solid #ccc;
       border-radius: 3px;
-      padding: 6px;           /* Reduced padding */
+      padding: 5px;          /* Reduced padding */
       text-align: center;
       cursor: pointer;
-      font-size: 0.75rem;     /* Reduced font size */
+      font-size: 0.75rem;    /* Slightly smaller font */
       transition: background 0.3s;
       color: #000;
     }
@@ -92,11 +92,11 @@
     /* SELECTED UPGRADES & TOTAL */
     #selected-upgrades-container {
       text-align: center;
-      margin: 20px;
+      margin: 10px;
     }
     #selected-upgrades {
       list-style: none;
-      margin: 10px auto;
+      margin: 5px auto;
       padding-left: 0;
       max-width: 500px;
       max-height: 150px;
@@ -104,8 +104,8 @@
     }
     #selected-upgrades li {
       background-color: #e3e9f2;
-      margin: 5px 0;
-      padding: 5px;
+      margin: 3px 0;
+      padding: 4px;
       border-radius: 3px;
       cursor: pointer;
     }
@@ -118,8 +118,8 @@
       font-size: 1.1rem;
     }
     .reset-btn {
-      margin-top: 10px;
-      padding: 8px 16px;
+      margin-top: 5px;
+      padding: 6px 12px; /* Reduced padding */
       background: #ccc;
       border: none;
       border-radius: 3px;
@@ -132,14 +132,14 @@
     /* CUSTOMER FORM & SUMMARY */
     .form-section {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px; /* Reduced margin-bottom */
     }
     .form-section h2 {
       color: #fff;
-      margin-bottom: 10px;
+      margin-bottom: 8px; /* Reduced margin-bottom */
     }
     .form-row {
-      margin: 10px 0;
+      margin: 5px 0; /* Reduced margin */
     }
     .form-row label {
       display: inline-block;
@@ -155,8 +155,8 @@
       border-radius: 3px;
     }
     .generate-btn {
-      margin-top: 10px;
-      padding: 8px 16px;
+      margin-top: 5px;
+      padding: 6px 12px; /* Reduced padding */
       background: #007bff;
       border: none;
       border-radius: 3px;
@@ -168,9 +168,9 @@
       background: #0056c1;
     }
     #summaryOutput {
-      margin: 15px auto 0;
+      margin: 10px auto 0;
       background-color: #e3e9f2;
-      padding: 10px;
+      padding: 8px;
       border-radius: 5px;
       border: 1px solid #ccc;
       max-width: 500px;
@@ -183,10 +183,10 @@
 <body>
 
   <header>
-    <h1>Twenty's Autobody Mechanic</h1>
+    <h1>Twenty's Auto Body</h1>
   </header>
 
-  <!-- 3-COLUMN LAYOUT: PERFORMANCE, COSMETICS, RESPRAY -->
+  <!-- 3-COLUMN LAYOUT -->
   <div class="columns-container">
 
     <!-- COLUMN 1: PERFORMANCE -->
@@ -195,25 +195,20 @@
 
       <div class="sub-header">Performance Upgrades</div>
       <div class="grid-list">
-        <!-- Turbo (single tier) -->
         <button class="upgrade-btn" onclick="addUpgrade('Turbo', 10450)">Turbo ($10,450)</button>
-        <!-- Armor -->
         <button class="upgrade-btn" onclick="addUpgrade('Armor L1', 1000)">Armor L1 ($1,000)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Armor L2', 3500)">Armor L2 ($3,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Armor L3', 6500)">Armor L3 ($6,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Armor L4', 10450)">Armor L4 ($10,450)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Armor L5', 19500)">Armor L5 ($19,500)</button>
-        <!-- Brakes -->
         <button class="upgrade-btn" onclick="addUpgrade('Brakes L1', 1000)">Brakes L1 ($1,000)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Brakes L2', 3500)">Brakes L2 ($3,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Brakes L3', 6500)">Brakes L3 ($6,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Brakes L4', 10450)">Brakes L4 ($10,450)</button>
-        <!-- Transmission -->
         <button class="upgrade-btn" onclick="addUpgrade('Trans L1', 1000)">Trans L1 ($1,000)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Trans L2', 3500)">Trans L2 ($3,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Trans L3', 6500)">Trans L3 ($6,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Trans L4', 14250)">Trans L4 ($14,250)</button>
-        <!-- Suspension -->
         <button class="upgrade-btn" onclick="addUpgrade('Suspension L1', 1000)">Susp L1 ($1,000)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Suspension L2', 3500)">Susp L2 ($3,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Suspension L3', 6500)">Susp L3 ($6,500)</button>
