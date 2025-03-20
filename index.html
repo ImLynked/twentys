@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Twenty's Autobody Mechanic</title>
+  <title>Twenty's Auto Body</title>
   <style>
     /* BASIC RESET */
     * {
@@ -20,7 +20,7 @@
 
     /* HEADER */
     header {
-      background-color: #10182b; /* Dark navy bar at top */
+      background-color: #10182b;
       padding: 20px;
       text-align: center;
     }
@@ -29,7 +29,7 @@
       font-size: 24px;
     }
 
-    /* MAIN CONTAINER: 3 COLUMNS (Performance, Cosmetics, Respray) */
+    /* MAIN CONTAINER: 3 COLUMNS */
     .columns-container {
       display: flex;
       justify-content: space-around;
@@ -38,7 +38,7 @@
       gap: 20px;
     }
 
-    /* COLUMN STYLES: Increased width */
+    /* COLUMN STYLES: Wider Columns */
     .column {
       background-color: #fff;
       border: 1px solid #ccc;
@@ -65,7 +65,7 @@
       padding-bottom: 5px;
     }
 
-    /* GRID FOR BUTTONS (2-column grid for sub-sections) */
+    /* GRID FOR BUTTONS IN EACH SUB-SECTION (2-column grid) */
     .grid-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -73,7 +73,7 @@
       margin-bottom: 20px;
     }
 
-    /* UPGRADE BUTTONS: Made slightly smaller */
+    /* UPGRADE BUTTONS: Slightly smaller */
     .upgrade-btn {
       background-color: #e3e9f2;
       border: 1px solid #ccc;
@@ -183,15 +183,16 @@
 <body>
 
   <header>
-    <h1>Twenty's Autobody Mechanic</h1>
+    <h1>Twenty's Auto Body</h1>
   </header>
 
-  <!-- 3-COLUMN LAYOUT -->
+  <!-- 3-COLUMN LAYOUT: PERFORMANCE, COSMETICS, RESPRAY -->
   <div class="columns-container">
 
     <!-- COLUMN 1: PERFORMANCE -->
     <div class="column">
       <h2>Performance</h2>
+
       <div class="sub-header">Performance Upgrades</div>
       <div class="grid-list">
         <!-- Turbo (single tier) -->
@@ -319,7 +320,6 @@
         <button class="upgrade-btn" onclick="addUpgrade('Dashboard Color', 100)">Dashboard ($100)</button>
       </div>
     </div>
-
   </div>
 
   <!-- SELECTED UPGRADES & TOTAL -->
