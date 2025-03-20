@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Twenty's Autobody Mechanic</title>
+  <title>Twenty's Auto Body</title>
   <style>
     /* RESET */
     * {
@@ -15,12 +15,12 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #000; /* Black background */
-      color: #000;            /* Default text color is black (buttons, etc. are mostly light) */
+      color: #000;            /* Default text color for body */
     }
 
     /* HEADER */
     header {
-      background-color: #10182b;
+      background-color: #10182b; /* Dark navy bar at top */
       padding: 20px;
       text-align: center;
     }
@@ -29,14 +29,13 @@
       font-size: 24px;
     }
 
-    /* MAIN CONTAINER FOR COLUMNS */
+    /* MAIN CONTAINER: 3 COLUMNS => PERFORMANCE, COSMETICS, RESPRAY */
     .columns-container {
       display: flex;
-      flex-wrap: wrap;      /* Wrap columns on smaller screens */
       justify-content: space-around;
       align-items: flex-start;
       padding: 20px 40px;
-      gap: 20px;
+      gap: 20px; /* space between columns */
     }
 
     /* EACH COLUMN */
@@ -45,24 +44,36 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       padding: 15px;
-      min-width: 220px; /* Slightly narrower to fit 6 columns if screen is wide enough */
-      max-width: 300px;
+      min-width: 280px;
+      max-width: 350px;
     }
     .column h2 {
       text-align: center;
       margin-bottom: 10px;
       font-size: 1.2rem;
-      color: #000;  /* Column headings in black text */
+      color: #000;
     }
 
-    /* GRID OF BUTTONS IN EACH COLUMN */
+    /* SUB-HEADERS INSIDE A COLUMN (for organizing items) */
+    .sub-header {
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #000;
+      font-size: 1rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    /* GRID FOR BUTTONS */
     .grid-list {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr; /* 2 columns of buttons in each sub-section */
       gap: 8px;
+      margin-bottom: 20px;
     }
 
-    /* UPGRADE BUTTONS */
+    /* BUTTON STYLES */
     .upgrade-btn {
       background-color: #e3e9f2;
       border: 1px solid #ccc;
@@ -124,7 +135,7 @@
       margin-bottom: 20px;
     }
     .form-section h2 {
-      color: #fff; /* White heading for the form section */
+      color: #fff; /* White heading text */
       margin-bottom: 10px;
     }
     .form-row {
@@ -135,7 +146,7 @@
       width: 150px;
       text-align: right;
       margin-right: 5px;
-      color: #fff; /* Make these labels white as requested */
+      color: #fff; /* White label text */
     }
     .form-row input {
       width: 200px;
@@ -156,7 +167,6 @@
     .generate-btn:hover {
       background: #0056c1;
     }
-
     #summaryOutput {
       margin: 15px auto 0;
       background-color: #e3e9f2;
@@ -173,16 +183,81 @@
 <body>
 
   <header>
-    <h1>Twenty's Autobody Mechanic</h1>
+    <h1>Twenty's Auto Body</h1>
   </header>
 
-  <!-- 6-COLUMN LAYOUT: BODYWORK, LIGHTING, INTERIOR, MECHANICAL, PLATES, WHEELS -->
   <div class="columns-container">
 
-    <!-- 1) BODYWORK -->
+    <!-- COLUMN 1: PERFORMANCE -->
     <div class="column">
-      <h2>Bodywork</h2>
+      <h2>Performance</h2>
+
+      <!-- Original Performance Sub-Section -->
+      <div class="sub-header">Original Performance</div>
       <div class="grid-list">
+        <!-- Turbo -->
+        <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 1', 1000)">Turbo L1 ($1,000)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 2', 3500)">Turbo L2 ($3,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 3', 6500)">Turbo L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 4', 10450)">Turbo L4 ($10,450)</button>
+
+        <!-- Armor -->
+        <button class="upgrade-btn" onclick="addUpgrade('Armor Level 1', 1000)">Armor L1 ($1,000)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Armor Level 2', 3500)">Armor L2 ($3,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Armor Level 3', 6500)">Armor L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Armor Level 4', 10450)">Armor L4 ($10,450)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Armor Level 5', 19500)">Armor L5 ($19,500)</button>
+
+        <!-- Brakes -->
+        <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 1', 1000)">Brakes L1 ($1,000)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 2', 3500)">Brakes L2 ($3,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 3', 6500)">Brakes L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 4', 10450)">Brakes L4 ($10,450)</button>
+
+        <!-- Engine -->
+        <button class="upgrade-btn" onclick="addUpgrade('Engine Level 1', 1000)">Engine L1 ($1,000)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Engine Level 2', 3500)">Engine L2 ($3,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Engine Level 3', 6500)">Engine L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Engine Level 4', 10450)">Engine L4 ($10,450)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Engine Level 5', 19500)">Engine L5 ($19,500)</button>
+
+        <!-- Suspension -->
+        <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 1', 1000)">Suspension L1 ($1,000)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 2', 3500)">Suspension L2 ($3,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 3', 6500)">Suspension L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 4', 10450)">Suspension L4 ($10,450)</button>
+
+        <!-- Transmission -->
+        <button class="upgrade-btn" onclick="addUpgrade('Transmission L1', 1000)">Trans L1 ($1,000)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Transmission L2', 3500)">Trans L2 ($3,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Transmission L3', 6500)">Trans L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Transmission L4', 14250)">Trans L4 ($14,250)</button>
+      </div>
+
+      <!-- Mechanical Sub-Section (new references) -->
+      <div class="sub-header">Mechanical</div>
+      <div class="grid-list">
+        <button class="upgrade-btn" onclick="addUpgrade('Chassis', 500)">Chassis ($500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Chassis 1', 500)">Chassis 1 ($500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Chassis 2', 500)">Chassis 2 ($500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Chassis 3', 500)">Chassis 3 ($500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Chassis 4', 500)">Chassis 4 ($500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Cosmetic Suspension', 500)">Cosmetic Susp. ($500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Engine Block', 500)">Engine Block ($500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Air Filter', 500)">Air Filter ($500)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Engine 3', 10450)">Engine 3 ($10,450)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Engine 4', 19500)">Engine 4 ($19,500)</button>
+      </div>
+    </div>
+
+    <!-- COLUMN 2: COSMETICS -->
+    <div class="column">
+      <h2>Cosmetics</h2>
+
+      <!-- Bodywork Sub-Section -->
+      <div class="sub-header">Bodywork</div>
+      <div class="grid-list">
+        <!-- Items from the new references + any old body-type items -->
         <button class="upgrade-btn" onclick="addUpgrade('L Door', 500)">L Door ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('R Door', 500)">R Door ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('F Fender', 500)">F Fender ($500)</button>
@@ -198,23 +273,21 @@
         <button class="upgrade-btn" onclick="addUpgrade('Livery', 500)">Livery ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Exhaust', 500)">Exhaust ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Side Skirts', 500)">Side Skirts ($500)</button>
+        <!-- Original cosmetic items that fit "body" style -->
+        <button class="upgrade-btn" onclick="addUpgrade('Aerial', 500)">Aerial ($500)</button>
       </div>
-    </div>
 
-    <!-- 2) LIGHTING -->
-    <div class="column">
-      <h2>Lighting</h2>
+      <!-- Lighting Sub-Section -->
+      <div class="sub-header">Lighting</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Xenon Lights x1', 1100)">Xenon Lights x1 ($1,100)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Neon Kit 2', 300)">Neon Kit 2 ($300)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Neon Kit 3', 500)">Neon Kit 3 ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Neon Color', 300)">Neon Color ($300)</button>
       </div>
-    </div>
 
-    <!-- 3) INTERIOR -->
-    <div class="column">
-      <h2>Interior</h2>
+      <!-- Interior Sub-Section -->
+      <div class="sub-header">Interior</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Seat', 500)">Seat ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Dashboard', 500)">Dashboard ($500)</button>
@@ -227,38 +300,17 @@
         <button class="upgrade-btn" onclick="addUpgrade('Knob', 500)">Knob ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Hydro', 500)">Hydro ($500)</button>
       </div>
-    </div>
 
-    <!-- 4) MECHANICAL -->
-    <div class="column">
-      <h2>Mechanical</h2>
-      <div class="grid-list">
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis', 500)">Chassis ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis 1', 500)">Chassis 1 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis 2', 500)">Chassis 2 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis 3', 500)">Chassis 3 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis 4', 500)">Chassis 4 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Cosmetic Suspension', 500)">Cosmetic Suspension ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Engine Block', 500)">Engine Block ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Air Filter', 500)">Air Filter ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Engine 3', 10450)">Engine 3 ($10,450)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Engine 4', 19500)">Engine 4 ($19,500)</button>
-      </div>
-    </div>
-
-    <!-- 5) PLATES -->
-    <div class="column">
-      <h2>Plates</h2>
+      <!-- Plates Sub-Section -->
+      <div class="sub-header">Plates</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Plate', 1100)">Plate ($1,100)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Plate Holder', 500)">Plate Holder ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Vanity Plates', 500)">Vanity Plates ($500)</button>
       </div>
-    </div>
 
-    <!-- 6) WHEELS -->
-    <div class="column">
-      <h2>Wheels</h2>
+      <!-- Wheels Sub-Section -->
+      <div class="sub-header">Wheels</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Rims', 500)">Rims ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Custom Tires', 500)">Custom Tires ($500)</button>
@@ -267,6 +319,18 @@
         <button class="upgrade-btn" onclick="addUpgrade('Camber Front', 500)">Camber Front ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Camber Rear', 500)">Camber Rear ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Width', 500)">Width ($500)</button>
+      </div>
+    </div>
+
+    <!-- COLUMN 3: RESPRAY -->
+    <div class="column">
+      <h2>Respray</h2>
+      <div class="grid-list">
+        <button class="upgrade-btn" onclick="addUpgrade('Primary Respray', 1100)">Primary ($1,100)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Secondary Respray', 1100)">Secondary ($1,100)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Pearlescent Respray', 600)">Pearlescent ($600)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Interior Respray', 200)">Interior ($200)</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Dashboard Color', 100)">Dashboard ($100)</button>
       </div>
     </div>
   </div>
@@ -299,14 +363,16 @@
     <div id="summaryOutput"></div>
   </div>
 
-  <!-- SCRIPT FOR DYNAMIC PRICE & SUMMARY -->
   <script>
     let total = 0;
     let upgrades = [];
 
     function addUpgrade(name, price) {
+      // Add to the array
       upgrades.push({ name, price });
+      // Increase total
       total += price;
+      // Re-render
       renderUpgrades();
     }
 
@@ -317,6 +383,7 @@
       upgrades.forEach((upgrade, index) => {
         const li = document.createElement('li');
         li.textContent = \`\${upgrade.name} - $\${upgrade.price}\`;
+        // Clicking removes it
         li.addEventListener('click', () => removeUpgrade(index));
         upgradesList.appendChild(li);
       });
