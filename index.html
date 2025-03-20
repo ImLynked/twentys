@@ -14,7 +14,7 @@
     /* PAGE BACKGROUND */
     body {
       font-family: Arial, sans-serif;
-      background-color: #000; /* Background changed to black */
+      background-color: #1E5ACF; /* Background remains black-ish blue */
       color: #000;
     }
 
@@ -52,17 +52,11 @@
       font-size: 1.2rem;
     }
 
-    /* COSMETICS GRID (left column) */
-    .cosmetics-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-    }
-
-    /* PERFORMANCE COLUMN (middle) */
+    /* PERFORMANCE COLUMN (now first column) */
     .performance-column {
       width: 400px;
       text-align: left;
+      /* If you still want a slight left shift, you may adjust here */
     }
     .performance-section {
       margin-bottom: 20px;
@@ -79,7 +73,18 @@
       justify-items: start;
     }
 
-    /* RESPRAY GRID (right column) */
+    /* COSMETICS GRID (now second column) */
+    .cosmetics-column {
+      /* Added a class for cosmetics column if needed */
+      /* For the cosmetics column, we want a 5-column grid */
+    }
+    .cosmetics-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    /* RESPRAY GRID (third column) */
     .respray-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -101,7 +106,7 @@
       background-color: #d1d8e2;
     }
 
-    /* SELECTED UPGRADES & TOTAL (centered under Performance column) */
+    /* SELECTED UPGRADES & TOTAL (centered) */
     #selected-upgrades-container {
       text-align: center;
       margin-top: 20px;
@@ -193,10 +198,82 @@
     <h1>Twenty's Auto Body</h1>
   </header>
 
-  <!-- 3-COLUMN LAYOUT -->
+  <!-- 3-COLUMN LAYOUT (Swapped order: Performance, Cosmetics, Respray) -->
   <div class="columns-container">
 
-    <!-- LEFT COLUMN: COSMETICS -->
+    <!-- FIRST COLUMN: PERFORMANCE -->
+    <div class="column performance-column">
+      <h2>Performance</h2>
+
+      <div class="performance-section">
+        <h3>Turbo</h3>
+        <div class="levels">
+          <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 1', 1000)">Level 1<br>$1,000</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 2', 3500)">Level 2<br>$3,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 3', 6500)">Level 3<br>$6,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 4', 10450)">Level 4<br>$10,450</button>
+          <!-- Hidden placeholder for 5 columns -->
+          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
+        </div>
+      </div>
+
+      <div class="performance-section">
+        <h3>Armor</h3>
+        <div class="levels">
+          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 1', 1000)">Level 1<br>$1,000</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 2', 3500)">Level 2<br>$3,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 3', 6500)">Level 3<br>$6,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 4', 10450)">Level 4<br>$10,450</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 5', 19500)">Level 5<br>$19,500</button>
+        </div>
+      </div>
+
+      <div class="performance-section">
+        <h3>Brakes</h3>
+        <div class="levels">
+          <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 1', 1000)">Level 1<br>$1,000</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 2', 3500)">Level 2<br>$3,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 3', 6500)">Level 3<br>$6,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 4', 10450)">Level 4<br>$10,450</button>
+          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
+        </div>
+      </div>
+
+      <div class="performance-section">
+        <h3>Engine</h3>
+        <div class="levels">
+          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 1', 1000)">Level 1<br>$1,000</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 2', 3500)">Level 2<br>$3,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 3', 6500)">Level 3<br>$6,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 4', 10450)">Level 4<br>$10,450</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 5', 19500)">Level 5<br>$19,500</button>
+        </div>
+      </div>
+
+      <div class="performance-section">
+        <h3>Suspension</h3>
+        <div class="levels">
+          <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 1', 1000)">Level 1<br>$1,000</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 2', 3500)">Level 2<br>$3,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 3', 6500)">Level 3<br>$6,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 4', 10450)">Level 4<br>$10,450</button>
+          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
+        </div>
+      </div>
+
+      <div class="performance-section">
+        <h3>Transmission</h3>
+        <div class="levels">
+          <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 1', 1000)">Level 1<br>$1,000</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 2', 3500)">Level 2<br>$3,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 3', 6500)">Level 3<br>$6,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 4', 14250)">Level 4<br>$14,250</button>
+          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECOND COLUMN: COSMETICS (now second) -->
     <div class="column">
       <h2>Cosmetics</h2>
       <div class="cosmetics-grid">
@@ -232,82 +309,7 @@
       </div>
     </div>
 
-    <!-- MIDDLE COLUMN: PERFORMANCE -->
-    <div class="column performance-column">
-      <h2>Performance</h2>
-
-      <div class="performance-section">
-        <h3>Turbo</h3>
-        <div class="levels">
-          <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 1', 1000)">Level 1<br>$1,000</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 2', 3500)">Level 2<br>$3,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 3', 6500)">Level 3<br>$6,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 4', 10450)">Level 4<br>$10,450</button>
-          <!-- Hidden placeholder for even 5 columns -->
-          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
-        </div>
-      </div>
-
-      <div class="performance-section">
-        <h3>Armor</h3>
-        <div class="levels">
-          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 1', 1000)">Level 1<br>$1,000</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 2', 3500)">Level 2<br>$3,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 3', 6500)">Level 3<br>$6,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 4', 10450)">Level 4<br>$10,450</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 5', 19500)">Level 5<br>$19,500</button>
-        </div>
-      </div>
-
-      <div class="performance-section">
-        <h3>Brakes</h3>
-        <div class="levels">
-          <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 1', 1000)">Level 1<br>$1,000</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 2', 3500)">Level 2<br>$3,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 3', 6500)">Level 3<br>$6,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 4', 10450)">Level 4<br>$10,450</button>
-          <!-- Hidden placeholder for even 5 columns -->
-          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
-        </div>
-      </div>
-
-      <div class="performance-section">
-        <h3>Engine</h3>
-        <div class="levels">
-          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 1', 1000)">Level 1<br>$1,000</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 2', 3500)">Level 2<br>$3,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 3', 6500)">Level 3<br>$6,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 4', 10450)">Level 4<br>$10,450</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 5', 19500)">Level 5<br>$19,500</button>
-        </div>
-      </div>
-
-      <div class="performance-section">
-        <h3>Suspension</h3>
-        <div class="levels">
-          <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 1', 1000)">Level 1<br>$1,000</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 2', 3500)">Level 2<br>$3,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 3', 6500)">Level 3<br>$6,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 4', 10450)">Level 4<br>$10,450</button>
-          <!-- Hidden placeholder for even 5 columns -->
-          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
-        </div>
-      </div>
-
-      <div class="performance-section">
-        <h3>Transmission</h3>
-        <div class="levels">
-          <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 1', 1000)">Level 1<br>$1,000</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 2', 3500)">Level 2<br>$3,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 3', 6500)">Level 3<br>$6,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 4', 14250)">Level 4<br>$14,250</button>
-          <!-- Hidden placeholder for even 5 columns -->
-          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT COLUMN: RESPRAY -->
+    <!-- THIRD COLUMN: RESPRAY -->
     <div class="column">
       <h2>Respray</h2>
       <div class="respray-grid">
