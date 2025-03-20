@@ -47,6 +47,7 @@
       min-width: 250px;
     }
     .column h2 {
+      /* For performance column, we want left alignment */
       text-align: center;
       margin-bottom: 10px;
       font-size: 1.2rem;
@@ -60,11 +61,16 @@
     }
 
     /* PERFORMANCE GRID (middle column) */
+    .performance-column {
+      width: 400px; /* Fixed width */
+      /* Removed negative margin to let it naturally align more to the left */
+      text-align: left; /* Left align headings & content */
+    }
     .performance-section {
       margin-bottom: 20px;
     }
     .performance-section h3 {
-      text-align: center;
+      text-align: left; /* Left align section headings */
       margin-bottom: 8px;
       font-size: 1rem;
     }
@@ -72,6 +78,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr); /* 4 level buttons per category */
       gap: 5px;
+      justify-items: start; /* Align buttons to the left within each grid cell */
     }
 
     /* RESPRAY GRID (right column) */
@@ -179,16 +186,6 @@
       max-width: 500px;
       text-align: left;
       white-space: pre-wrap;
-    }
-    
-    /* Shift Performance column more to the left */
-    .performance-column {
-      margin-left: -50px; /* Adjust this value as needed */
-    }
-    
-    /* Ensure we use class for performance column (wrap the Performance column with that class) */
-    .columns-container > .performance-column {
-      width: 400px; /* Existing width, untouched */
     }
   </style>
 </head>
