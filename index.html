@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Twenty's Auto Body</title>
+  <title>Twenty's Autobody Mechanic</title>
   <style>
     /* BASIC RESET */
     * {
@@ -38,14 +38,14 @@
       gap: 20px;
     }
 
-    /* COLUMN STYLES */
+    /* COLUMN STYLES: Increased width for better visibility */
     .column {
       background-color: #fff;
       border: 1px solid #ccc;
       border-radius: 5px;
       padding: 15px;
-      min-width: 280px;
-      max-width: 350px;
+      min-width: 350px;
+      max-width: 500px;
     }
     .column h2 {
       text-align: center;
@@ -65,10 +65,10 @@
       padding-bottom: 5px;
     }
 
-    /* GRID FOR BUTTONS IN EACH SUB-SECTION */
+    /* GRID FOR BUTTONS IN EACH SUB-SECTION (2-column grid) */
     .grid-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
       margin-bottom: 20px;
     }
@@ -183,16 +183,17 @@
 <body>
 
   <header>
-    <h1>Twenty's Auto Body</h1>
+    <h1>Twenty's Autobody Mechanic</h1>
   </header>
 
-  <!-- 3-COLUMN LAYOUT: Performance, Cosmetics, Respray -->
+  <!-- 3-COLUMN LAYOUT: PERFORMANCE, COSMETICS, RESPRAY -->
   <div class="columns-container">
 
     <!-- COLUMN 1: PERFORMANCE -->
     <div class="column">
       <h2>Performance</h2>
-      <!-- Performance Upgrades -->
+
+      <!-- Performance Upgrades Sub-Section -->
       <div class="sub-header">Performance Upgrades</div>
       <div class="grid-list">
         <!-- Turbo (single tier) -->
@@ -326,6 +327,7 @@
         <button class="upgrade-btn" onclick="addUpgrade('Dashboard Color', 100)">Dashboard ($100)</button>
       </div>
     </div>
+
   </div>
 
   <!-- SELECTED UPGRADES & TOTAL -->
@@ -386,12 +388,10 @@
       renderUpgrades();
     }
 
-    // Updated reset function to also clear customer details
     function resetAll() {
       total = 0;
       upgrades = [];
       renderUpgrades();
-      // Reset customer details
       document.getElementById('customerName').value = "";
       document.getElementById('vehicle').value = "";
       document.getElementById('plate').value = "";
