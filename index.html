@@ -14,7 +14,7 @@
     /* PAGE BACKGROUND */
     body {
       font-family: Arial, sans-serif;
-      background-color: #1E5ACF; /* Background color remains the same */
+      background-color: #1E5ACF; /* Remains the same */
       color: #000;
     }
 
@@ -55,14 +55,14 @@
     /* COSMETICS GRID (left column) */
     .cosmetics-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 5 columns for cosmetics */
+      grid-template-columns: repeat(5, 1fr);
       gap: 10px;
     }
 
     /* PERFORMANCE COLUMN (middle) */
     .performance-column {
       width: 400px; 
-      text-align: left; /* Left-align headings & buttons */
+      text-align: left;
     }
     .performance-section {
       margin-bottom: 20px;
@@ -74,7 +74,7 @@
     }
     .levels {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 level buttons per category */
+      grid-template-columns: repeat(5, 1fr); /* 5 columns for categories with Level 5 */
       gap: 5px;
       justify-items: start;
     }
@@ -101,7 +101,7 @@
       background-color: #d1d8e2;
     }
 
-    /* SELECTED UPGRADES & TOTAL (centered under Performance column) */
+    /* SELECTED UPGRADES & TOTAL */
     #selected-upgrades-container {
       text-align: center;
       margin-top: 20px;
@@ -196,7 +196,7 @@
   <!-- 3-COLUMN LAYOUT -->
   <div class="columns-container">
 
-    <!-- LEFT COLUMN: COSMETICS (all now $50) -->
+    <!-- LEFT COLUMN: COSMETICS ($50 each) -->
     <div class="column">
       <h2>Cosmetics</h2>
       <div class="cosmetics-grid">
@@ -232,13 +232,14 @@
       </div>
     </div>
 
-    <!-- MIDDLE COLUMN: PERFORMANCE (Levels updated to screenshot) -->
+    <!-- MIDDLE COLUMN: PERFORMANCE -->
     <div class="column performance-column">
       <h2>Performance</h2>
 
+      <!-- TURBO: 4 levels -->
       <div class="performance-section">
         <h3>Turbo</h3>
-        <div class="levels">
+        <div class="levels" style="grid-template-columns: repeat(4, 1fr);">
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 3', 6500)">Level 3<br>$6,500</button>
@@ -246,6 +247,7 @@
         </div>
       </div>
 
+      <!-- ARMOR: 5 levels (added Level 5 = $19,500) -->
       <div class="performance-section">
         <h3>Armor</h3>
         <div class="levels">
@@ -253,12 +255,14 @@
           <button class="upgrade-btn" onclick="addUpgrade('Armor Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Armor Level 3', 6500)">Level 3<br>$6,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Armor Level 4', 10450)">Level 4<br>$10,450</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Armor Level 5', 19500)">Level 5<br>$19,500</button>
         </div>
       </div>
 
+      <!-- BRAKES: 4 levels -->
       <div class="performance-section">
         <h3>Brakes</h3>
-        <div class="levels">
+        <div class="levels" style="grid-template-columns: repeat(4, 1fr);">
           <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 3', 6500)">Level 3<br>$6,500</button>
@@ -266,19 +270,22 @@
         </div>
       </div>
 
+      <!-- ENGINE: 5 levels (added Level 5 = $19,500) -->
       <div class="performance-section">
         <h3>Engine</h3>
         <div class="levels">
           <button class="upgrade-btn" onclick="addUpgrade('Engine Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Engine Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Engine Level 3', 6500)">Level 3<br>$6,500</button>
-          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 4', 19500)">Level 4<br>$19,500</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 4', 10450)">Level 4<br>$10,450</button>
+          <button class="upgrade-btn" onclick="addUpgrade('Engine Level 5', 19500)">Level 5<br>$19,500</button>
         </div>
       </div>
 
+      <!-- SUSPENSION: 4 levels -->
       <div class="performance-section">
         <h3>Suspension</h3>
-        <div class="levels">
+        <div class="levels" style="grid-template-columns: repeat(4, 1fr);">
           <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 3', 6500)">Level 3<br>$6,500</button>
@@ -286,9 +293,10 @@
         </div>
       </div>
 
+      <!-- TRANSMISSION: 4 levels -->
       <div class="performance-section">
         <h3>Transmission</h3>
-        <div class="levels">
+        <div class="levels" style="grid-template-columns: repeat(4, 1fr);">
           <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 3', 6500)">Level 3<br>$6,500</button>
@@ -297,7 +305,7 @@
       </div>
     </div>
 
-    <!-- RIGHT COLUMN: RESPRAY (unchanged) -->
+    <!-- RIGHT COLUMN: RESPRAY -->
     <div class="column">
       <h2>Respray</h2>
       <div class="respray-grid">
