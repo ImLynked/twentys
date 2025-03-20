@@ -61,8 +61,9 @@
 
     /* PERFORMANCE COLUMN (middle) */
     .performance-column {
-      width: 400px; 
+      width: 400px;
       text-align: left;
+      margin-left: -50px; /* Shift performance column to the left */
     }
     .performance-section {
       margin-bottom: 20px;
@@ -74,7 +75,7 @@
     }
     .levels {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 5 columns for categories with Level 5 */
+      grid-template-columns: repeat(5, 1fr); /* 5 columns for level buttons */
       gap: 5px;
       justify-items: start;
     }
@@ -101,7 +102,7 @@
       background-color: #d1d8e2;
     }
 
-    /* SELECTED UPGRADES & TOTAL */
+    /* SELECTED UPGRADES & TOTAL (centered under Performance column) */
     #selected-upgrades-container {
       text-align: center;
       margin-top: 20px;
@@ -196,7 +197,7 @@
   <!-- 3-COLUMN LAYOUT -->
   <div class="columns-container">
 
-    <!-- LEFT COLUMN: COSMETICS (now $500 each) -->
+    <!-- LEFT COLUMN: COSMETICS -->
     <div class="column">
       <h2>Cosmetics</h2>
       <div class="cosmetics-grid">
