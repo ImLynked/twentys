@@ -14,7 +14,7 @@
     /* PAGE BACKGROUND */
     body {
       font-family: Arial, sans-serif;
-      background-color: #1E5ACF; /* Remains the same */
+      background-color: #1E5ACF; /* Updated background color */
       color: #000;
     }
 
@@ -63,7 +63,6 @@
     .performance-column {
       width: 400px;
       text-align: left;
-      margin-left: -50px; /* Shift performance column to the left */
     }
     .performance-section {
       margin-bottom: 20px;
@@ -73,10 +72,11 @@
       margin-bottom: 8px;
       font-size: 1rem;
     }
+    /* All performance level grids use 5 columns with a 10px gap */
     .levels {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 5 columns for level buttons */
-      gap: 5px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
       justify-items: start;
     }
 
@@ -239,11 +239,13 @@
 
       <div class="performance-section">
         <h3>Turbo</h3>
-        <div class="levels" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="levels">
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 3', 6500)">Level 3<br>$6,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 4', 10450)">Level 4<br>$10,450</button>
+          <!-- Hidden placeholder for 5th column -->
+          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
         </div>
       </div>
 
@@ -260,11 +262,13 @@
 
       <div class="performance-section">
         <h3>Brakes</h3>
-        <div class="levels" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="levels">
           <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 3', 6500)">Level 3<br>$6,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Brakes Level 4', 10450)">Level 4<br>$10,450</button>
+          <!-- Hidden placeholder for 5th column -->
+          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
         </div>
       </div>
 
@@ -281,21 +285,25 @@
 
       <div class="performance-section">
         <h3>Suspension</h3>
-        <div class="levels" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="levels">
           <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 3', 6500)">Level 3<br>$6,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Suspension Level 4', 10450)">Level 4<br>$10,450</button>
+          <!-- Hidden placeholder for 5th column -->
+          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
         </div>
       </div>
 
       <div class="performance-section">
         <h3>Transmission</h3>
-        <div class="levels" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="levels">
           <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 1', 1000)">Level 1<br>$1,000</button>
           <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 3', 6500)">Level 3<br>$6,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 4', 14250)">Level 4<br>$14,250</button>
+          <!-- Hidden placeholder for 5th column -->
+          <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
         </div>
       </div>
     </div>
