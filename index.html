@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Removed any mention of "twentys.github.io" -->
-  <title>Auto Body Shop</title>
+  <title>Twenty's Auto Body 🏎️💨</title>
   <style>
     /* BASIC RESET */
     * {
@@ -15,7 +14,7 @@
     /* PAGE BACKGROUND */
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f3f9; /* Light grayish background */
+      background-color: #f0f3f9; /* Light grayish background from screenshot */
       color: #000;
     }
 
@@ -56,11 +55,11 @@
     /* COSMETICS GRID (left column) */
     .cosmetics-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr); /* 5 columns so items fit neatly */
       gap: 10px;
     }
 
-    /* PERFORMANCE GRID (center column) */
+    /* PERFORMANCE GRID (middle column) */
     .performance-section {
       margin-bottom: 20px;
     }
@@ -71,7 +70,7 @@
     }
     .levels {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr); /* 4 level buttons per category */
       gap: 5px;
     }
 
@@ -186,7 +185,6 @@
 <body>
 
   <header>
-    <!-- Removed any mention of "twentys.github.io" -->
     <h1>Twenty's Auto Body</h1>
   </header>
 
@@ -197,13 +195,40 @@
     <div class="column">
       <h2>Cosmetics</h2>
       <div class="cosmetics-grid">
-        <!-- Example cosmetics at $500 each -->
         <button class="upgrade-btn" onclick="addUpgrade('Aerial', 500)">Aerial<br>$500</button>
         <button class="upgrade-btn" onclick="addUpgrade('Air Filter', 500)">Air Filter<br>$500</button>
         <button class="upgrade-btn" onclick="addUpgrade('Door Speaker', 500)">Door Speaker<br>$500</button>
         <button class="upgrade-btn" onclick="addUpgrade('Custom Trim', 500)">Custom Trim<br>$500</button>
         <button class="upgrade-btn" onclick="addUpgrade('Dashboard', 500)">Dashboard<br>$500</button>
-        <!-- Add more cosmetics if desired -->
+
+        <button class="upgrade-btn" onclick="addUpgrade('Engine Block', 500)">Engine Block<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Exhaust', 500)">Exhaust<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Grille', 500)">Grille<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Hood', 500)">Hood<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Horn', 500)">Horn<br>$500</button>
+
+        <button class="upgrade-btn" onclick="addUpgrade('Lights', 500)">Lights<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Livery', 500)">Livery<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Mirrors', 500)">Mirrors<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Ornaments', 500)">Ornaments<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Plate', 500)">Plate<br>$500</button>
+
+        <button class="upgrade-btn" onclick="addUpgrade('Rear Bumper', 500)">Rear Bumper<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Roof', 500)">Roof<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Seat', 500)">Seat<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Shift Knob', 500)">Shift Knob<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Speaker', 500)">Speaker<br>$500</button>
+
+        <button class="upgrade-btn" onclick="addUpgrade('Spoiler', 500)">Spoiler<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Sun Strip', 500)">Sun Strip<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Vanity Plate', 500)">Vanity Plate<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Window Tints', 500)">Window Tints<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Side Skirts', 500)">Side Skirts<br>$500</button>
+        <!-- Added additional cosmetics -->
+        <button class="upgrade-btn" onclick="addUpgrade('Sill', 500)">Sill<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Fender', 500)">Fender<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Fuel Tank', 500)">Fuel Tank<br>$500</button>
+        <button class="upgrade-btn" onclick="addUpgrade('Rear Diffuser', 500)">Rear Diffuser<br>$500</button>
       </div>
     </div>
 
@@ -270,7 +295,7 @@
           <button class="upgrade-btn" onclick="addUpgrade('Transmission Level 4', 14250)">Level 4<br>$14,250</button>
         </div>
       </div>
-    </div><!-- end PERFORMANCE column -->
+    </div>
 
     <!-- RIGHT COLUMN: RESPRAY -->
     <div class="column">
@@ -282,8 +307,8 @@
         <button class="upgrade-btn" onclick="addUpgrade('Interior Respray', 200)">Interior<br>$200</button>
         <button class="upgrade-btn" onclick="addUpgrade('Dashboard Color', 100)">Dashboard<br>$100</button>
       </div>
-    </div><!-- end RESPRAY column -->
-  </div><!-- end columns-container -->
+    </div>
+  </div>
 
   <!-- SELECTED UPGRADES & TOTAL (centered) -->
   <div id="selected-upgrades-container">
