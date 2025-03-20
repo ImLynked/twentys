@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Twenty's Auto Body 🏎️💨</title>
+  <title>Twenty's Auto Body</title>
   <style>
     /* BASIC RESET */
     * {
@@ -55,7 +55,7 @@
     /* COSMETICS GRID (left column) */
     .cosmetics-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 5 columns so items fit neatly */
+      grid-template-columns: repeat(5, 1fr); /* 5 columns for cosmetics */
       gap: 10px;
     }
 
@@ -180,6 +180,16 @@
       text-align: left;
       white-space: pre-wrap;
     }
+    
+    /* Shift Performance column more to the left */
+    .performance-column {
+      margin-left: -50px; /* Adjust this value as needed */
+    }
+    
+    /* Ensure we use class for performance column (wrap the Performance column with that class) */
+    .columns-container > .performance-column {
+      width: 400px; /* Existing width, untouched */
+    }
   </style>
 </head>
 <body>
@@ -224,16 +234,11 @@
         <button class="upgrade-btn" onclick="addUpgrade('Vanity Plate', 500)">Vanity Plate<br>$500</button>
         <button class="upgrade-btn" onclick="addUpgrade('Window Tints', 500)">Window Tints<br>$500</button>
         <button class="upgrade-btn" onclick="addUpgrade('Side Skirts', 500)">Side Skirts<br>$500</button>
-        <!-- Added additional cosmetics -->
-        <button class="upgrade-btn" onclick="addUpgrade('Sill', 500)">Sill<br>$500</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Fender', 500)">Fender<br>$500</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Fuel Tank', 500)">Fuel Tank<br>$500</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Rear Diffuser', 500)">Rear Diffuser<br>$500</button>
       </div>
     </div>
 
     <!-- MIDDLE COLUMN: PERFORMANCE -->
-    <div class="column">
+    <div class="column performance-column">
       <h2>Performance</h2>
 
       <div class="performance-section">
