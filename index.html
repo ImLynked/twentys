@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Twenty's Auto Body</title>
+  <title>Twenty's Autobody Mechanic</title>
   <style>
     /* BASIC RESET */
     * {
@@ -21,7 +21,7 @@
     /* HEADER */
     header {
       background-color: #10182b;
-      padding: 10px;
+      padding: 10px; /* Reduced padding */
       text-align: center;
     }
     header h1 {
@@ -34,8 +34,8 @@
       display: flex;
       justify-content: space-around;
       align-items: flex-start;
-      padding: 10px 20px;
-      gap: 10px;
+      padding: 10px 20px; /* Reduced padding */
+      gap: 10px; /* Reduced gap between columns */
     }
 
     /* COLUMN STYLES: Wider Columns */
@@ -43,34 +43,34 @@
       background-color: #fff;
       border: 1px solid #ccc;
       border-radius: 5px;
-      padding: 10px;
+      padding: 10px; /* Reduced padding */
       min-width: 500px;
       max-width: 600px;
     }
     .column h2 {
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 8px; /* Reduced margin */
       font-size: 1.2rem;
       color: #000;
     }
 
     /* SUB-HEADERS */
     .sub-header {
-      margin-top: 8px;
-      margin-bottom: 4px;
+      margin-top: 8px; /* Reduced margin-top */
+      margin-bottom: 4px; /* Reduced margin-bottom */
       font-weight: bold;
       color: #000;
       font-size: 1rem;
       border-bottom: 1px solid #ccc;
-      padding-bottom: 3px;
+      padding-bottom: 3px; /* Reduced padding-bottom */
     }
 
-    /* GRID FOR BUTTONS IN EACH SUB-SECTION (2-Column Grid) */
+    /* GRID FOR BUTTONS (2-COLUMN Grid for each sub-section) */
     .grid-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 5px;
-      margin-bottom: 10px;
+      gap: 5px;  /* Reduced gap */
+      margin-bottom: 10px; /* Reduced margin-bottom */
     }
 
     /* UPGRADE BUTTONS: Slightly Smaller */
@@ -78,10 +78,10 @@
       background-color: #e3e9f2;
       border: 1px solid #ccc;
       border-radius: 3px;
-      padding: 5px;
+      padding: 5px;          /* Reduced padding */
       text-align: center;
       cursor: pointer;
-      font-size: 0.75rem;
+      font-size: 0.75rem;    /* Slightly smaller font */
       transition: background 0.3s;
       color: #000;
     }
@@ -119,7 +119,7 @@
     }
     .reset-btn {
       margin-top: 5px;
-      padding: 6px 12px;
+      padding: 6px 12px; /* Reduced padding */
       background: #ccc;
       border: none;
       border-radius: 3px;
@@ -129,28 +129,17 @@
       background: #bbb;
     }
 
-    /* NAME SELECTION SECTION */
-    .name-selection {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .name-selection h2 {
-      color: #fff;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-
     /* CUSTOMER FORM & SUMMARY */
     .form-section {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 10px; /* Reduced margin-bottom */
     }
     .form-section h2 {
       color: #fff;
-      margin-bottom: 8px;
+      margin-bottom: 8px; /* Reduced margin-bottom */
     }
     .form-row {
-      margin: 5px 0;
+      margin: 5px 0; /* Reduced margin */
     }
     .form-row label {
       display: inline-block;
@@ -167,7 +156,7 @@
     }
     .generate-btn {
       margin-top: 5px;
-      padding: 6px 12px;
+      padding: 6px 12px; /* Reduced padding */
       background: #007bff;
       border: none;
       border-radius: 3px;
@@ -194,14 +183,16 @@
 <body>
 
   <header>
-    <h1>Twenty's Auto Body</h1>
+    <h1>Twenty's Autobody Mechanic</h1>
   </header>
 
   <!-- 3-COLUMN LAYOUT -->
   <div class="columns-container">
+
     <!-- COLUMN 1: PERFORMANCE -->
     <div class="column">
       <h2>Performance</h2>
+
       <div class="sub-header">Performance Upgrades</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Turbo', 10450)">Turbo ($10,450)</button>
@@ -326,17 +317,6 @@
     </div>
   </div>
 
-  <!-- NEW: NAME SELECTION SECTION -->
-  <div class="name-selection">
-    <h2>Select Your Name</h2>
-    <div class="grid-list">
-      <button class="upgrade-btn" onclick="selectCustomerName('Res Twenty')">Res Twenty</button>
-      <button class="upgrade-btn" onclick="selectCustomerName('Xavier Hendrixx')">Xavier Hendrixx</button>
-      <button class="upgrade-btn" onclick="selectCustomerName('Craggie Random')">Craggie Random</button>
-      <button class="upgrade-btn" onclick="selectCustomerName('Brielle Dinero')">Brielle Dinero</button>
-    </div>
-  </div>
-
   <!-- SELECTED UPGRADES & TOTAL -->
   <div id="selected-upgrades-container">
     <h2>Selected Upgrades</h2>
@@ -419,11 +399,6 @@ Price Charged: $${total}
 SHOP: Twenty's`;
 
       document.getElementById('summaryOutput').textContent = summary;
-    }
-
-    // Function to set the customer name from the selection buttons
-    function selectCustomerName(name) {
-      document.getElementById('customerName').value = name;
     }
   </script>
 
