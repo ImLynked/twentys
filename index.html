@@ -14,7 +14,7 @@
     /* PAGE BACKGROUND */
     body {
       font-family: Arial, sans-serif;
-      background-color: #1E5ACF; /* Background remains black-ish blue */
+      background-color: #000; /* Background changed back to black */
       color: #000;
     }
 
@@ -52,11 +52,10 @@
       font-size: 1.2rem;
     }
 
-    /* PERFORMANCE COLUMN (now first column) */
+    /* PERFORMANCE COLUMN (middle) */
     .performance-column {
       width: 400px;
       text-align: left;
-      /* If you still want a slight left shift, you may adjust here */
     }
     .performance-section {
       margin-bottom: 20px;
@@ -73,11 +72,7 @@
       justify-items: start;
     }
 
-    /* COSMETICS GRID (now second column) */
-    .cosmetics-column {
-      /* Added a class for cosmetics column if needed */
-      /* For the cosmetics column, we want a 5-column grid */
-    }
+    /* COSMETICS GRID (now second column after swapping) */
     .cosmetics-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -106,7 +101,7 @@
       background-color: #d1d8e2;
     }
 
-    /* SELECTED UPGRADES & TOTAL (centered) */
+    /* SELECTED UPGRADES & TOTAL */
     #selected-upgrades-container {
       text-align: center;
       margin-top: 20px;
@@ -198,10 +193,10 @@
     <h1>Twenty's Auto Body</h1>
   </header>
 
-  <!-- 3-COLUMN LAYOUT (Swapped order: Performance, Cosmetics, Respray) -->
+  <!-- 3-COLUMN LAYOUT -->
   <div class="columns-container">
 
-    <!-- FIRST COLUMN: PERFORMANCE -->
+    <!-- FIRST COLUMN: PERFORMANCE (swapped order) -->
     <div class="column performance-column">
       <h2>Performance</h2>
 
@@ -212,7 +207,6 @@
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 2', 3500)">Level 2<br>$3,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 3', 6500)">Level 3<br>$6,500</button>
           <button class="upgrade-btn" onclick="addUpgrade('Turbo Level 4', 10450)">Level 4<br>$10,450</button>
-          <!-- Hidden placeholder for 5 columns -->
           <button class="upgrade-btn" style="visibility:hidden;">&nbsp;</button>
         </div>
       </div>
