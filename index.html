@@ -14,7 +14,7 @@
     /* PAGE BACKGROUND */
     body {
       font-family: Arial, sans-serif;
-      background-color: #000; /* Background changed back to black */
+      background-color: #000; /* Black background */
       color: #000;
     }
 
@@ -52,7 +52,7 @@
       font-size: 1.2rem;
     }
 
-    /* PERFORMANCE COLUMN (middle) */
+    /* PERFORMANCE COLUMN (first column after swap) */
     .performance-column {
       width: 400px;
       text-align: left;
@@ -72,7 +72,7 @@
       justify-items: start;
     }
 
-    /* COSMETICS GRID (now second column after swapping) */
+    /* COSMETICS GRID (second column) */
     .cosmetics-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -155,6 +155,7 @@
       width: 150px;
       text-align: right;
       margin-right: 5px;
+      color: #fff;  /* Label text changed to white */
     }
     .form-row input {
       width: 200px;
@@ -193,10 +194,10 @@
     <h1>Twenty's Auto Body</h1>
   </header>
 
-  <!-- 3-COLUMN LAYOUT -->
+  <!-- 3-COLUMN LAYOUT (Swapped Order: Performance, Cosmetics, Respray) -->
   <div class="columns-container">
 
-    <!-- FIRST COLUMN: PERFORMANCE (swapped order) -->
+    <!-- FIRST COLUMN: PERFORMANCE -->
     <div class="column performance-column">
       <h2>Performance</h2>
 
@@ -267,7 +268,7 @@
       </div>
     </div>
 
-    <!-- SECOND COLUMN: COSMETICS (now second) -->
+    <!-- SECOND COLUMN: COSMETICS -->
     <div class="column">
       <h2>Cosmetics</h2>
       <div class="cosmetics-grid">
