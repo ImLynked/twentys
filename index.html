@@ -186,7 +186,7 @@
     <h1>Twenty's Autobody Mechanic</h1>
   </header>
 
-  <!-- 3-COLUMN LAYOUT: PERFORMANCE, COSMETICS, RESPRAY -->
+  <!-- 3-COLUMN LAYOUT -->
   <div class="columns-container">
 
     <!-- COLUMN 1: PERFORMANCE -->
@@ -212,7 +212,8 @@
         <button class="upgrade-btn" onclick="addUpgrade('Suspension L1', 1000)">Susp L1 ($1,000)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Suspension L2', 3500)">Susp L2 ($3,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Suspension L3', 6500)">Susp L3 ($6,500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Suspension L4', 10450)">Susp L4 ($10,450)</button>
+        <!-- Updated Suspension L4 cost -->
+        <button class="upgrade-btn" onclick="addUpgrade('Suspension L4', 20000)">Susp L4 ($20,000)</button>
       </div>
 
       <div class="sub-header">Engine</div>
@@ -301,6 +302,12 @@
       <div class="sub-header">Window Tint</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Window Tint', 1100)">Window Tint ($1,100)</button>
+      </div>
+
+      <!-- New Wheels Sub-Section -->
+      <div class="sub-header">Wheels</div>
+      <div class="grid-list">
+        <button class="upgrade-btn" onclick="addUpgrade('Wheels', 500)">Wheels ($500)</button>
       </div>
     </div>
 
@@ -398,7 +405,6 @@
 `Customer Name: ${name}
 Vehicle | [Make/Model]: ${vehicle}
 Plate: ${plate}
-Repair Fee: $${repairFee}
 Upgrades Purchased: ${upgradesPurchased}
 Price Charged: $${finalCost}
 SHOP: Twenty's`;
