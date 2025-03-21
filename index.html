@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Twenty's Auto Body</title>
+  <title>Twenty's Autobody Mechanic</title>
   <style>
     /* BASIC RESET */
     * {
@@ -178,31 +178,21 @@
       white-space: pre-wrap;
       color: #000;
     }
-
-    /* NAME SELECTION SECTION */
-    .name-selection {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .name-selection h2 {
-      color: #fff;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Twenty's Auto Body</h1>
+    <h1>Twenty's Autobody Mechanic</h1>
   </header>
 
-  <!-- 3-COLUMN LAYOUT -->
+  <!-- 3-COLUMN LAYOUT: PERFORMANCE, COSMETICS, RESPRAY -->
   <div class="columns-container">
 
     <!-- COLUMN 1: PERFORMANCE -->
     <div class="column">
       <h2>Performance</h2>
+
       <div class="sub-header">Performance Upgrades</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Turbo', 10450)">Turbo ($10,450)</button>
@@ -327,17 +317,6 @@
     </div>
   </div>
 
-  <!-- NAME SELECTION SECTION -->
-  <div class="name-selection">
-    <h2>Select Your Name</h2>
-    <div class="grid-list">
-      <button class="upgrade-btn" onclick="selectCustomerName('Res Twenty')">Res Twenty</button>
-      <button class="upgrade-btn" onclick="selectCustomerName('Xavier Hendrixx')">Xavier Hendrixx</button>
-      <button class="upgrade-btn" onclick="selectCustomerName('Craggie Random')">Craggie Random</button>
-      <button class="upgrade-btn" onclick="selectCustomerName('Brielle Dinero')">Brielle Dinero</button>
-    </div>
-  </div>
-
   <!-- SELECTED UPGRADES & TOTAL -->
   <div id="selected-upgrades-container">
     <h2>Selected Upgrades</h2>
@@ -424,10 +403,6 @@ Upgrades Purchased: ${upgradesPurchased}
 Price Charged: $${finalCost}
 SHOP: Twenty's`;
       document.getElementById('summaryOutput').textContent = summary;
-    }
-
-    function selectCustomerName(name) {
-      document.getElementById('customerName').value = name;
     }
   </script>
 
