@@ -212,6 +212,74 @@
       white-space: pre-wrap;
       color: #000;
     }
+    
+    /* LOGS TRANSCRIPT STYLES */
+    #logs-transcript-container {
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    #basic-log {
+      background: #2a2d38;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      color: #fff;
+      text-align: left;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    .toggle-btn {
+      background: #007bff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      margin-bottom: 10px;
+    }
+    .toggle-btn:hover {
+      background: #0056c1;
+    }
+    /* Clear logs button uses a distinct style */
+    .clear-btn {
+      background: #dc3545;
+    }
+    #full-logs {
+      background: linear-gradient(145deg, #2a2d38, #3a3f48);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      max-height: 200px;
+      overflow-y: auto;
+      color: #fff;
+      text-align: left;
+      white-space: pre-wrap;
+    }
+    #full-logs ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    #full-logs li {
+      padding: 5px 0;
+      border-bottom: 1px solid #444a5a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #full-logs li:last-child {
+      border-bottom: none;
+    }
+    .log-delete-btn {
+      background: transparent;
+      border: none;
+      color: #dc3545;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 10px;
+    }
   </style>
 </head>
 <body>
@@ -401,14 +469,30 @@
     <div id="summaryOutput"></div>
   </div>
   
+  <!-- LOGS TRANSCRIPT FEATURE -->
+  <div id="logs-transcript-container">
+    <div id="basic-log">No logs yet.</div>
+    <button id="toggle-full-logs-btn" class="toggle-btn">▼ Show Full Logs</button>
+    <button id="clear-logs-btn" class="toggle-btn clear-btn">Clear Logs</button>
+    <div id="full-logs" style="display: none;">
+      <ul id="logs-list"></ul>
+    </div>
+  </div>
+  
   <script>
     let total = 0;
     let upgrades = [];
+    // Load logs from localStorage if available, else start with empty array
+    let logs = JSON.parse(localStorage.getItem("logs")) || [];
+  
+    // Render logs on page load
+    renderLogs();
   
     function addUpgrade(name, price) {
       upgrades.push({ name, price });
       total += price;
       renderUpgrades();
+      addLog(`Added ${name} upgrade for $${price}.`);
     }
   
     function renderUpgrades() {
@@ -424,6 +508,7 @@
     }
   
     function removeUpgrade(index) {
+      addLog(`Removed ${upgrades[index].name} upgrade for $${upgrades[index].price}.`);
       total -= upgrades[index].price;
       upgrades.splice(index, 1);
       renderUpgrades();
@@ -437,6 +522,7 @@
       document.getElementById('vehicle').value = "";
       document.getElementById('plate').value = "";
       document.getElementById('repairFee').value = "";
+      addLog("Reset all upgrades and customer details.");
     }
   
     function generateSummary() {
@@ -456,7 +542,72 @@ Upgrades Purchased: ${upgradesPurchased}
 Price Charged: $${finalCost}
 SHOP: Twenty's`;
       document.getElementById('summaryOutput').textContent = summary;
+      // Log the full customer detail entry
+      addLog("Customer Detail Entry:\n" + summary);
     }
+  
+    function addLog(message) {
+      const timestamp = new Date().toLocaleString();
+      const logMessage = `[${timestamp}] ${message}`;
+      logs.push(logMessage);
+      updateLocalStorage();
+      renderLogs();
+    }
+  
+    function removeLog(index) {
+      logs.splice(index, 1);
+      updateLocalStorage();
+      renderLogs();
+    }
+  
+    function clearLogs() {
+      logs = [];
+      updateLocalStorage();
+      renderLogs();
+    }
+  
+    function updateLocalStorage() {
+      localStorage.setItem("logs", JSON.stringify(logs));
+    }
+  
+    function renderLogs() {
+      // Update the basic log (most recent log)
+      const basicLog = document.getElementById('basic-log');
+      basicLog.textContent = logs.length ? logs[logs.length - 1] : "No logs yet.";
+  
+      // Update the full logs list with individual delete buttons
+      const logsList = document.getElementById('logs-list');
+      logsList.innerHTML = '';
+      logs.forEach((log, index) => {
+        const li = document.createElement('li');
+        const span = document.createElement('span');
+        span.textContent = log;
+        li.appendChild(span);
+  
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'X';
+        deleteBtn.className = 'log-delete-btn';
+        deleteBtn.addEventListener('click', () => removeLog(index));
+        li.appendChild(deleteBtn);
+  
+        logsList.appendChild(li);
+      });
+    }
+  
+    document.getElementById('toggle-full-logs-btn').addEventListener('click', function() {
+      const fullLogs = document.getElementById('full-logs');
+      if (fullLogs.style.display === 'none') {
+        fullLogs.style.display = 'block';
+        this.textContent = '▲ Hide Full Logs';
+      } else {
+        fullLogs.style.display = 'none';
+        this.textContent = '▼ Show Full Logs';
+      }
+    });
+  
+    document.getElementById('clear-logs-btn').addEventListener('click', function() {
+      clearLogs();
+    });
   </script>
   
 </body>
