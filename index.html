@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Twenty's Autobody Mechanic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* BASIC RESET */
     * {
@@ -10,14 +11,14 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     /* PAGE & FONT */
     body {
       font-family: Arial, sans-serif;
-      background-color: #000; /* Black background */
+      background-color: #0b0f1a; /* Dark blue background */
       color: #000;
     }
-
+    
     /* HEADER */
     header {
       background-color: #10182b;
@@ -28,7 +29,6 @@
       align-items: center;
       justify-content: space-between;
     }
-    /* Set fixed widths for left and right sections so center text is exactly centered */
     .header-content .left,
     .header-content .right {
       width: 60px;
@@ -38,15 +38,17 @@
       text-align: center;
     }
     .logo {
-      width: 60px;  /* Adjust size as needed */
+      width: 60px;
       height: auto;
     }
     header h1 {
       color: #fff;
       font-size: 24px;
       margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
     }
-
+    
     /* MAIN CONTAINER: 3 COLUMNS */
     .columns-container {
       display: flex;
@@ -55,15 +57,16 @@
       padding: 10px 20px;
       gap: 10px;
     }
-
-    /* COLUMN STYLES: Wider Columns */
+    
+    /* COLUMN STYLES: Enhanced box appearance */
     .column {
       background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
+      border: 1px solid #444a5a;
+      border-radius: 8px;
+      padding: 15px;
       min-width: 500px;
       max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .column h2 {
       text-align: center;
@@ -71,7 +74,7 @@
       font-size: 1.2rem;
       color: #000;
     }
-
+    
     /* SUB-HEADERS */
     .sub-header {
       margin-top: 8px;
@@ -79,10 +82,10 @@
       font-weight: bold;
       color: #000;
       font-size: 1rem;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #444a5a;
       padding-bottom: 3px;
     }
-
+    
     /* GRID FOR BUTTONS (2-Column Grid) */
     .grid-list {
       display: grid;
@@ -90,27 +93,30 @@
       gap: 5px;
       margin-bottom: 10px;
     }
-
-    /* UPGRADE BUTTONS: Slightly Smaller */
+    
+    /* UPDATED UPGRADE BUTTONS */
     .upgrade-btn {
-      background-color: #e3e9f2;
-      border: 1px solid #ccc;
-      border-radius: 3px;
+      background: linear-gradient(145deg, #2a2d38, #3a3f48);
+      border: 1px solid #444a5a;
+      border-radius: 4px;
       padding: 5px;
       text-align: center;
       cursor: pointer;
       font-size: 0.75rem;
-      transition: background 0.3s;
-      color: #000;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      color: #fff;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     }
     .upgrade-btn:hover {
-      background-color: #d1d8e2;
+      transform: scale(1.05);
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
     }
-
+    
     /* SELECTED UPGRADES & TOTAL */
     #selected-upgrades-container {
       text-align: center;
       margin: 10px;
+      color: #fff;
     }
     #selected-upgrades {
       list-style: none;
@@ -126,13 +132,14 @@
       padding: 4px;
       border-radius: 3px;
       cursor: pointer;
+      color: #000;
     }
     #selected-upgrades li:hover {
       background-color: #d1d8e2;
     }
     #total-price {
       font-weight: bold;
-      color: #000;
+      color: #fff;
       font-size: 1.1rem;
     }
     .reset-btn {
@@ -146,18 +153,25 @@
     .reset-btn:hover {
       background: #bbb;
     }
-
+    
     /* CUSTOMER FORM & SUMMARY */
     .form-section {
+      background: linear-gradient(145deg, #2a2d38, #3a3f48);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px auto;
+      max-width: 600px;
       text-align: center;
-      margin-bottom: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
     .form-section h2 {
       color: #fff;
-      margin-bottom: 8px;
+      margin-bottom: 15px;
+      font-size: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
     .form-row {
-      margin: 5px 0;
+      margin: 10px 0;
     }
     .form-row label {
       display: inline-block;
@@ -167,14 +181,16 @@
       color: #fff;
     }
     .form-row input {
-      width: 200px;
-      padding: 5px;
-      border: 1px solid #999;
-      border-radius: 3px;
+      width: 250px;
+      padding: 8px;
+      border: 1px solid #444a5a;
+      border-radius: 4px;
+      background-color: #10182b;
+      color: #fff;
     }
     .generate-btn {
-      margin-top: 5px;
-      padding: 6px 12px;
+      margin-top: 10px;
+      padding: 8px 16px;
       background: #007bff;
       border: none;
       border-radius: 3px;
@@ -186,11 +202,11 @@
       background: #0056c1;
     }
     #summaryOutput {
-      margin: 10px auto 0;
+      margin: 15px auto 0;
       background-color: #e3e9f2;
-      padding: 8px;
+      padding: 10px;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      border: 1px solid #444a5a;
       max-width: 500px;
       text-align: left;
       white-space: pre-wrap;
@@ -202,12 +218,15 @@
 
   <header>
     <div class="header-content">
+      <!-- Left logo -->
       <div class="left">
         <img src="https://cdn.discordapp.com/attachments/1063986906758656021/1069631356830760981/Twentys_Logo.png?ex=67e0c914&is=67df7794&hm=cbf384e43fba291d5839f5c081a0e2462bcd06018ccb9b0bdf52b64d53e5df36&" alt="Twenty's Logo" class="logo" />
       </div>
+      <!-- Center title -->
       <div class="center">
         <h1>Twenty's Autobody Mechanic</h1>
       </div>
+      <!-- Right logo -->
       <div class="right">
         <img src="https://cdn.discordapp.com/attachments/1063986906758656021/1069631356830760981/Twentys_Logo.png?ex=67e0c914&is=67df7794&hm=cbf384e43fba291d5839f5c081a0e2462bcd06018ccb9b0bdf52b64d53e5df36&" alt="Twenty's Logo" class="logo" />
       </div>
@@ -216,11 +235,9 @@
 
   <!-- 3-COLUMN LAYOUT -->
   <div class="columns-container">
-
     <!-- COLUMN 1: PERFORMANCE -->
     <div class="column">
       <h2>Performance</h2>
-
       <div class="sub-header">Performance Upgrades</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Turbo', 10450)">Turbo ($10,450)</button>
@@ -242,7 +259,7 @@
         <button class="upgrade-btn" onclick="addUpgrade('Suspension L3', 6500)">Susp L3 ($6,500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Suspension L4', 20000)">Susp L4 ($20,000)</button>
       </div>
-
+      
       <div class="sub-header">Engine</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Engine 1', 1000)">Engine 1 ($1,000)</button>
@@ -251,7 +268,7 @@
         <button class="upgrade-btn" onclick="addUpgrade('Engine 4', 10450)">Engine 4 ($10,450)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Engine 5', 19500)">Engine 5 ($19,500)</button>
       </div>
-
+      
       <div class="sub-header">Mechanical</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Chassis', 500)">Chassis ($500)</button>
@@ -264,11 +281,10 @@
         <button class="upgrade-btn" onclick="addUpgrade('Air Filter', 500)">Air Filter ($500)</button>
       </div>
     </div>
-
+    
     <!-- COLUMN 2: COSMETICS -->
     <div class="column">
       <h2>Cosmetics</h2>
-
       <div class="sub-header">Bodywork</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Left Door', 500)">Left Door ($500)</button>
@@ -290,7 +306,7 @@
         <button class="upgrade-btn" onclick="addUpgrade('Livery', 500)">Livery ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Exhaust', 500)">Exhaust ($500)</button>
       </div>
-
+      
       <div class="sub-header">Lighting</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Xenon Lights', 1100)">Xenon Lights ($1,100)</button>
@@ -298,7 +314,7 @@
         <button class="upgrade-btn" onclick="addUpgrade('Neon Kit x4', 500)">Neon Kit x4 ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Neon Color', 600)">Neon Color ($600)</button>
       </div>
-
+      
       <div class="sub-header">Interior</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Seats', 500)">Seats ($500)</button>
@@ -325,12 +341,12 @@
         <button class="upgrade-btn" onclick="addUpgrade('Knob', 500)">Knob ($500)</button>
         <button class="upgrade-btn" onclick="addUpgrade('Dashboard', 600)">Dashboard ($600)</button>
       </div>
-
+      
       <div class="sub-header">Window Tint</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="addUpgrade('Window Tint', 1100)">Window Tint ($1,100)</button>
       </div>
-
+      
       <!-- Wheels Section with Tire Smoke -->
       <div class="sub-header">Wheels</div>
       <div class="grid-list">
@@ -339,7 +355,7 @@
         <button class="upgrade-btn" onclick="addUpgrade('Tire Smoke', 500)">Tire Smoke ($500)</button>
       </div>
     </div>
-
+    
     <!-- COLUMN 3: RESPRAY -->
     <div class="column">
       <h2>Respray</h2>
@@ -352,7 +368,7 @@
       </div>
     </div>
   </div>
-
+  
   <!-- SELECTED UPGRADES & TOTAL -->
   <div id="selected-upgrades-container">
     <h2>Selected Upgrades</h2>
@@ -360,7 +376,7 @@
     <h3>Total Price: $<span id="total-price">0</span></h3>
     <button class="reset-btn" onclick="resetAll()">Reset All</button>
   </div>
-
+  
   <!-- CUSTOMER FORM & SUMMARY -->
   <div class="form-section">
     <h2>Customer Details</h2>
@@ -380,21 +396,21 @@
       <label for="repairFee">Repair Fee:</label>
       <input type="number" id="repairFee" placeholder="Enter Repair Fee" />
     </div>
-
+  
     <button class="generate-btn" onclick="generateSummary()">Generate Summary</button>
     <div id="summaryOutput"></div>
   </div>
-
+  
   <script>
     let total = 0;
     let upgrades = [];
-
+  
     function addUpgrade(name, price) {
       upgrades.push({ name, price });
       total += price;
       renderUpgrades();
     }
-
+  
     function renderUpgrades() {
       const upgradesList = document.getElementById('selected-upgrades');
       upgradesList.innerHTML = '';
@@ -406,13 +422,13 @@
       });
       document.getElementById('total-price').textContent = total;
     }
-
+  
     function removeUpgrade(index) {
       total -= upgrades[index].price;
       upgrades.splice(index, 1);
       renderUpgrades();
     }
-
+  
     function resetAll() {
       total = 0;
       upgrades = [];
@@ -422,12 +438,14 @@
       document.getElementById('plate').value = "";
       document.getElementById('repairFee').value = "";
     }
-
+  
     function generateSummary() {
       const name = document.getElementById('customerName').value || "N/A";
       const vehicle = document.getElementById('vehicle').value || "N/A";
       const plate = document.getElementById('plate').value || "N/A";
-      const repairFee = parseFloat(document.getElementById('repairFee').value) || 0;
+      // Parse and round repair fee to the nearest 10
+      const repairFeeInput = parseFloat(document.getElementById('repairFee').value) || 0;
+      const repairFee = Math.round(repairFeeInput / 10) * 10;
       const finalCost = total + repairFee;
       const upgradesPurchased = upgrades.map(u => u.name).join(', ') || "None";
       const summary =
@@ -440,6 +458,6 @@ SHOP: Twenty's`;
       document.getElementById('summaryOutput').textContent = summary;
     }
   </script>
-
+  
 </body>
 </html>
