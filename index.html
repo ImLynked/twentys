@@ -111,6 +111,11 @@
       transform: scale(1.05);
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
     }
+    /* Style for selected upgrade buttons */
+    .upgrade-btn.selected {
+      background: linear-gradient(145deg, #007bff, #0056c1);
+      border: 1px solid #007bff;
+    }
     
     /* SELECTED UPGRADES & TOTAL */
     #selected-upgrades-container {
@@ -168,6 +173,7 @@
       color: #fff;
       margin-bottom: 15px;
       font-size: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
     .form-row {
       margin: 10px 0;
@@ -242,7 +248,6 @@
     .toggle-btn:hover {
       background: #0056c1;
     }
-    /* Clear logs button uses a distinct style */
     .clear-btn {
       background: #dc3545;
     }
@@ -308,49 +313,49 @@
       <div class="sub-header">Performance Upgrades</div>
       <div class="grid-list">
         <!-- UPDATED PERFORMANCE PRICES -->
-        <button class="upgrade-btn" onclick="addUpgrade('Turbo', 11000)">Turbo ($11,000)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Armor L1', 3000)">Armor L1 ($3,000)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Armor L2', 4250)">Armor L2 ($4,250)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Armor L3', 6500)">Armor L3 ($6,500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Armor L4', 10450)">Armor L4 ($10,450)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Armor L5', 19500)">Armor L5 ($19,500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Turbo', 11000, this)">Turbo ($11,000)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Armor L1', 3000, this)">Armor L1 ($3,000)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Armor L2', 4250, this)">Armor L2 ($4,250)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Armor L3', 6500, this)">Armor L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Armor L4', 10450, this)">Armor L4 ($10,450)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Armor L5', 19500, this)">Armor L5 ($19,500)</button>
 
-        <button class="upgrade-btn" onclick="addUpgrade('Brakes L1', 3000)">Brakes L1 ($3,000)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Brakes L2', 4250)">Brakes L2 ($4,250)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Brakes L3', 6500)">Brakes L3 ($6,500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Brakes L4', 11000)">Brakes L4 ($11,000)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Brakes L1', 3000, this)">Brakes L1 ($3,000)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Brakes L2', 4250, this)">Brakes L2 ($4,250)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Brakes L3', 6500, this)">Brakes L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Brakes L4', 11000, this)">Brakes L4 ($11,000)</button>
 
-        <button class="upgrade-btn" onclick="addUpgrade('Trans L1', 3000)">Trans L1 ($3,000)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Trans L2', 4250)">Trans L2 ($4,250)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Trans L3', 6500)">Trans L3 ($6,500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Trans L4', 14250)">Trans L4 ($14,250)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Trans L1', 3000, this)">Trans L1 ($3,000)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Trans L2', 4250, this)">Trans L2 ($4,250)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Trans L3', 6500, this)">Trans L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Trans L4', 14250, this)">Trans L4 ($14,250)</button>
 
-        <button class="upgrade-btn" onclick="addUpgrade('Suspension L1', 3000)">Susp L1 ($3,000)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Suspension L2', 4250)">Susp L2 ($4,250)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Suspension L3', 6500)">Susp L3 ($6,500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Suspension L4', 20000)">Susp L4 ($20,000)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Suspension L1', 3000, this)">Susp L1 ($3,000)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Suspension L2', 4250, this)">Susp L2 ($4,250)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Suspension L3', 6500, this)">Susp L3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Suspension L4', 20000, this)">Susp L4 ($20,000)</button>
       </div>
       
       <div class="sub-header">Engine</div>
       <div class="grid-list">
         <!-- UPDATED ENGINE PRICES -->
-        <button class="upgrade-btn" onclick="addUpgrade('Engine 1', 3000)">Engine 1 ($3,000)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Engine 2', 4250)">Engine 2 ($4,250)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Engine 3', 6500)">Engine 3 ($6,500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Engine 4', 10450)">Engine 4 ($10,450)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Engine 5', 19500)">Engine 5 ($19,500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Engine 1', 3000, this)">Engine 1 ($3,000)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Engine 2', 4250, this)">Engine 2 ($4,250)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Engine 3', 6500, this)">Engine 3 ($6,500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Engine 4', 10450, this)">Engine 4 ($10,450)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Engine 5', 19500, this)">Engine 5 ($19,500)</button>
       </div>
       
       <div class="sub-header">Mechanical</div>
       <div class="grid-list">
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis', 500)">Chassis ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis 1', 500)">Chassis 1 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis 2', 500)">Chassis 2 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis 3', 500)">Chassis 3 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Chassis 4', 500)">Chassis 4 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Cosmetic Suspension', 500)">Cosmetic Susp. ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Engine Block', 500)">Engine Block ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Air Filter', 500)">Air Filter ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Chassis', 500, this)">Chassis ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Chassis 1', 500, this)">Chassis 1 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Chassis 2', 500, this)">Chassis 2 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Chassis 3', 500, this)">Chassis 3 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Chassis 4', 500, this)">Chassis 4 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Cosmetic Suspension', 500, this)">Cosmetic Susp. ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Engine Block', 500, this)">Engine Block ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Air Filter', 500, this)">Air Filter ($500)</button>
       </div>
     </div>
     
@@ -359,81 +364,80 @@
       <h2>Cosmetics</h2>
       <div class="sub-header">Bodywork</div>
       <div class="grid-list">
-        <button class="upgrade-btn" onclick="addUpgrade('Left Door', 500)">Left Door ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Right Door', 500)">Right Door ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Front Bumper', 500)">Front Bumper ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Rear Bumper', 500)">Rear Bumper ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Fender (Front)', 500)">Fender (Front) ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Fender (Rear)', 500)">Fender (Rear) ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Hood', 500)">Hood ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Trunk', 500)">Trunk ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Roof', 500)">Roof ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Spoiler', 500)">Spoiler ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Wing', 500)">Wing ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Wing 1', 500)">Wing 1 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Wing 2', 500)">Wing 2 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Wing 3', 500)">Wing 3 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Side Skirts', 500)">Side Skirts ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Roll Cage', 500)">Roll Cage ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Livery', 500)">Livery ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Exhaust', 500)">Exhaust ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Strut', 500)">Strut ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Left Door', 500, this)">Left Door ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Right Door', 500, this)">Right Door ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Front Bumper', 500, this)">Front Bumper ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Rear Bumper', 500, this)">Rear Bumper ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Fender (Front)', 500, this)">Fender (Front) ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Fender (Rear)', 500, this)">Fender (Rear) ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Hood', 500, this)">Hood ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Trunk', 500, this)">Trunk ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Roof', 500, this)">Roof ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Spoiler', 500, this)">Spoiler ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Wing', 500, this)">Wing ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Wing 1', 500, this)">Wing 1 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Wing 2', 500, this)">Wing 2 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Wing 3', 500, this)">Wing 3 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Side Skirts', 500, this)">Side Skirts ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Roll Cage', 500, this)">Roll Cage ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Livery', 500, this)">Livery ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Exhaust', 500, this)">Exhaust ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Strut', 500, this)">Strut ($500)</button>
       </div>
       
       <div class="sub-header">Lighting</div>
       <div class="grid-list">
-        <button class="upgrade-btn" onclick="addUpgrade('Xenon Lights', 1100)">Xenon Lights ($1,100)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Neon Front x2', 200)">Neon Front x2 ($200)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Neon Back x2', 200)">Neon Back x2 ($200)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Neon Right x4', 200)">Neon Right x4 ($200)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Neon Left x2', 200)">Neon Left x2 ($200)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Neon Kit x4', 800)">Neon Kit x4 ($800)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Neon Color', 600)">Neon Color ($600)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Xenon Lights', 1100, this)">Xenon Lights ($1,100)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Neon Front x2', 200, this)">Neon Front x2 ($200)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Neon Back x2', 200, this)">Neon Back x2 ($200)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Neon Right x4', 200, this)">Neon Right x4 ($200)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Neon Left x2', 200, this)">Neon Left x2 ($200)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Neon Kit x4', 800, this)">Neon Kit x4 ($800)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Neon Color', 600, this)">Neon Color ($600)</button>
       </div>
       
       <div class="sub-header">Interior</div>
       <div class="grid-list">
-        <button class="upgrade-btn" onclick="addUpgrade('Seats', 500)">Seats ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Steering Wheel', 500)">Steering Wheel ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Shifter Lever', 500)">Shifter Lever ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Door Speaker', 500)">Door Speaker ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Speakers', 500)">Speakers ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Ice', 500)">Ice ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Dials', 500)">Dials ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Trim A', 500)">Trim A ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Trim B', 500)">Trim B ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Interior 1', 500)">Interior 1 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Interior 2', 500)">Interior 2 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Interior 3', 500)">Interior 3 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Interior 4', 500)">Interior 4 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Interior 5', 500)">Interior 5 ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Grille', 500)">Grille ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Window', 500)">Window ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Aerial', 500)">Aerial ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Ornaments', 500)">Ornaments ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Plate Index', 500)">Plate Index ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Plate Vanity', 500)">Plate Vanity ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Plaque', 500)">Plaque ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Hydro', 500)">Hydro ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Hydraulic', 500)">Hydraulic ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Knob', 500)">Knob ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Dashboard', 600)">Dashboard ($600)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Arch Cover', 600)">Arch Cover ($600)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Fuel Tank', 600)">Fuel Tank ($600)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Seats', 500, this)">Seats ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Steering Wheel', 500, this)">Steering Wheel ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Shifter Lever', 500, this)">Shifter Lever ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Door Speaker', 500, this)">Door Speaker ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Speakers', 500, this)">Speakers ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Ice', 500, this)">Ice ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Dials', 500, this)">Dials ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Trim A', 500, this)">Trim A ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Trim B', 500, this)">Trim B ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Interior 1', 500, this)">Interior 1 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Interior 2', 500, this)">Interior 2 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Interior 3', 500, this)">Interior 3 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Interior 4', 500, this)">Interior 4 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Interior 5', 500, this)">Interior 5 ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Grille', 500, this)">Grille ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Window', 500, this)">Window ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Aerial', 500, this)">Aerial ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Ornaments', 500, this)">Ornaments ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Plate Index', 500, this)">Plate Index ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Plate Vanity', 500, this)">Plate Vanity ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Plaque', 500, this)">Plaque ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Hydro', 500, this)">Hydro ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Hydraulic', 500, this)">Hydraulic ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Knob', 500, this)">Knob ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Dashboard', 600, this)">Dashboard ($600)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Arch Cover', 600, this)">Arch Cover ($600)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Fuel Tank', 600, this)">Fuel Tank ($600)</button>
       </div>
       
       <div class="sub-header">Window Tint</div>
       <div class="grid-list">
-        <button class="upgrade-btn" onclick="addUpgrade('Window Tint', 1100)">Window Tint ($1,100)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Window Tint', 1100, this)">Window Tint ($1,100)</button>
       </div>
       
-      <!-- Wheels Section with Tire Smoke -->
       <div class="sub-header">Wheels</div>
       <div class="grid-list">
-        <button class="upgrade-btn" onclick="addUpgrade('Wheels', 500)">Wheels ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Custom Wheels', 500)">Custom Wheels ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Wheel Color', 500)">Wheel Color ($500)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Tire Smoke', 500)">Tire Smoke ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Wheels', 500, this)">Wheels ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Custom Wheels', 500, this)">Custom Wheels ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Wheel Color', 500, this)">Wheel Color ($500)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Tire Smoke', 500, this)">Tire Smoke ($500)</button>
       </div>
     </div>
     
@@ -441,12 +445,11 @@
     <div class="column">
       <h2>Respray</h2>
       <div class="grid-list">
-        <button class="upgrade-btn" onclick="addUpgrade('Primary Respray', 1100)">Primary ($1,100)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Secondary Respray', 1100)">Secondary ($1,100)</button>
-        <!-- Fixing the small error for Pearlescent Respray -->
-        <button class="upgrade-btn" onclick="addUpgrade('Pearlescent Respray', 1100)">Pearlescent ($1,100)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Interior Respray', 1100)">Interior ($1,100)</button>
-        <button class="upgrade-btn" onclick="addUpgrade('Dashboard Color', 1100)">Dashboard ($1,100)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Primary Respray', 1100, this)">Primary ($1,100)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Secondary Respray', 1100, this)">Secondary ($1,100)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Pearlescent Respray', 1100, this)">Pearlescent ($1,100)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Interior Respray', 1100, this)">Interior ($1,100)</button>
+        <button class="upgrade-btn" onclick="toggleUpgrade('Dashboard Color', 1100, this)">Dashboard ($1,100)</button>
       </div>
     </div>
   </div>
@@ -497,17 +500,29 @@
     let upgrades = [];
     // Load logs from localStorage if available, else start with empty array
     let logs = JSON.parse(localStorage.getItem("logs")) || [];
-
+  
     // Render logs on page load
     renderLogs();
-
-    function addUpgrade(name, price) {
-      upgrades.push({ name, price });
-      total += price;
-      renderUpgrades();
-      addLog(`Added ${name} upgrade for $${price}.`);
+  
+    // Toggle functionality: if upgrade already exists, remove it; otherwise, add it.
+    function toggleUpgrade(name, price, button) {
+      const existingIndex = upgrades.findIndex(u => u.name === name);
+      if (existingIndex !== -1) {
+        // Remove the upgrade if it exists
+        addLog(`Removed ${name} upgrade for $${upgrades[existingIndex].price}.`);
+        total -= upgrades[existingIndex].price;
+        upgrades.splice(existingIndex, 1);
+        button.classList.remove("selected");
+        renderUpgrades();
+      } else {
+        upgrades.push({ name, price });
+        total += price;
+        addLog(`Added ${name} upgrade for $${price}.`);
+        button.classList.add("selected");
+        renderUpgrades();
+      }
     }
-
+  
     function renderUpgrades() {
       const upgradesList = document.getElementById('selected-upgrades');
       upgradesList.innerHTML = '';
@@ -519,14 +534,14 @@
       });
       document.getElementById('total-price').textContent = total;
     }
-
+  
     function removeUpgrade(index) {
       addLog(`Removed ${upgrades[index].name} upgrade for $${upgrades[index].price}.`);
       total -= upgrades[index].price;
       upgrades.splice(index, 1);
       renderUpgrades();
     }
-
+  
     function resetAll() {
       total = 0;
       upgrades = [];
@@ -537,7 +552,7 @@
       document.getElementById('repairFee').value = "";
       addLog("Reset all upgrades and customer details.");
     }
-
+  
     function generateSummary() {
       const name = document.getElementById('customerName').value || "N/A";
       const vehicle = document.getElementById('vehicle').value || "N/A";
@@ -558,7 +573,7 @@ SHOP: Twenty's`;
       // Log the full customer detail entry
       addLog("Customer Detail Entry:\n" + summary);
     }
-
+  
     function addLog(message) {
       const timestamp = new Date().toLocaleString();
       const logMessage = `[${timestamp}] ${message}`;
@@ -566,28 +581,28 @@ SHOP: Twenty's`;
       updateLocalStorage();
       renderLogs();
     }
-
+  
     function removeLog(index) {
       logs.splice(index, 1);
       updateLocalStorage();
       renderLogs();
     }
-
+  
     function clearLogs() {
       logs = [];
       updateLocalStorage();
       renderLogs();
     }
-
+  
     function updateLocalStorage() {
       localStorage.setItem("logs", JSON.stringify(logs));
     }
-
+  
     function renderLogs() {
       // Update the basic log (most recent log)
       const basicLog = document.getElementById('basic-log');
       basicLog.textContent = logs.length ? logs[logs.length - 1] : "No logs yet.";
-
+  
       // Update the full logs list with individual delete buttons
       const logsList = document.getElementById('logs-list');
       logsList.innerHTML = '';
@@ -596,17 +611,17 @@ SHOP: Twenty's`;
         const span = document.createElement('span');
         span.textContent = log;
         li.appendChild(span);
-
+  
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'X';
         deleteBtn.className = 'log-delete-btn';
         deleteBtn.addEventListener('click', () => removeLog(index));
         li.appendChild(deleteBtn);
-
+  
         logsList.appendChild(li);
       });
     }
-
+  
     document.getElementById('toggle-full-logs-btn').addEventListener('click', function() {
       const fullLogs = document.getElementById('full-logs');
       if (fullLogs.style.display === 'none') {
@@ -617,11 +632,18 @@ SHOP: Twenty's`;
         this.textContent = '▼ Show Full Logs';
       }
     });
-
+  
     document.getElementById('clear-logs-btn').addEventListener('click', function() {
       clearLogs();
     });
   </script>
-
+  
+  <style>
+    .upgrade-btn.selected {
+      background: linear-gradient(145deg, #007bff, #0056c1);
+      border: 1px solid #007bff;
+    }
+  </style>
+  
 </body>
 </html>
