@@ -156,7 +156,7 @@
       margin-bottom: 10px;
     }
     
-    /* UPGRADE BUTTONS - More visually appealing */
+    /* UPGRADE BUTTONS */
     .upgrade-btn {
       background: linear-gradient(145deg, #2a2d38, #3a3f48);
       border: 1px solid #444a5a;
@@ -603,12 +603,20 @@
       }
     }
     
-    // Toggle mechanic flag when checkbox changes
+    // Toggle mechanic flag when checkbox changes and update prices of already selected upgrades
     function toggleMechanic(checkbox) {
       isMechanic = checkbox.checked;
+      // Update effective price for each upgrade in the list
+      upgrades.forEach(u => {
+        // u.basePrice and u.category are stored on each upgrade
+        u.price = u.basePrice - getDiscount(u.category);
+      });
+      total = upgrades.reduce((acc, cur) => acc + cur.price, 0);
+      renderUpgrades();
     }
     
     // Toggle functionality: if upgrade already exists, remove it; otherwise, add it.
+    // Now store basePrice and category.
     function toggleUpgrade(name, basePrice, button, category) {
       const discount = getDiscount(category);
       const effectivePrice = basePrice - discount;
@@ -620,7 +628,7 @@
         button.classList.remove("selected");
         renderUpgrades();
       } else {
-        upgrades.push({ name, price: effectivePrice });
+        upgrades.push({ name, basePrice: basePrice, category: category, price: effectivePrice });
         total += effectivePrice;
         addLog(`Added ${name} upgrade for $${effectivePrice}.`);
         button.classList.add("selected");
