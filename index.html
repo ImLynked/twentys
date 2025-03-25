@@ -49,24 +49,24 @@
       font-weight: 700;
     }
     
-    /* MAIN CONTAINER: 3 COLUMNS */
+    /* MAIN CONTAINER: 4 COLUMNS */
     .columns-container {
       display: flex;
       justify-content: space-around;
       align-items: flex-start;
       padding: 10px 20px;
       gap: 10px;
+      flex-wrap: wrap;
     }
-    
-    /* COLUMN STYLES: Enhanced box appearance */
     .column {
       background-color: #fff;
       border: 1px solid #444a5a;
       border-radius: 8px;
       padding: 15px;
-      min-width: 500px;
+      min-width: 250px;
       max-width: 600px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      flex: 1;
     }
     .column h2 {
       text-align: center;
@@ -86,7 +86,7 @@
       padding-bottom: 3px;
     }
     
-    /* GRID FOR BUTTONS (2-Column Grid) */
+    /* GRID FOR BUTTONS */
     .grid-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -105,13 +105,12 @@
       font-size: 0.75rem;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
       color: #fff;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
     }
     .upgrade-btn:hover {
       transform: scale(1.05);
-      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.6);
     }
-    /* Style for selected upgrade buttons */
     .upgrade-btn.selected {
       background: linear-gradient(145deg, #007bff, #0056c1);
       border: 1px solid #007bff;
@@ -159,7 +158,7 @@
       background: #bbb;
     }
     
-    /* CUSTOMER FORM & SUMMARY */
+    /* CUSTOMER FORM */
     .form-section {
       background: linear-gradient(145deg, #2a2d38, #3a3f48);
       padding: 20px;
@@ -167,7 +166,7 @@
       margin: 20px auto;
       max-width: 600px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
     .form-section h2 {
       color: #fff;
@@ -255,7 +254,7 @@
       background: linear-gradient(145deg, #2a2d38, #3a3f48);
       padding: 15px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       max-height: 200px;
       overflow-y: auto;
       color: #fff;
@@ -305,31 +304,30 @@
     </div>
   </header>
 
-  <!-- 3-COLUMN LAYOUT -->
+  <!-- 4-COLUMN LAYOUT -->
   <div class="columns-container">
     <!-- COLUMN 1: PERFORMANCE -->
     <div class="column">
       <h2>Performance</h2>
       <div class="sub-header">Performance Upgrades</div>
       <div class="grid-list">
-        <!-- UPDATED PERFORMANCE PRICES -->
         <button class="upgrade-btn" onclick="toggleUpgrade('Turbo', 11000, this)">Turbo ($11,000)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Armor L1', 3000, this)">Armor L1 ($3,000)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Armor L2', 4250, this)">Armor L2 ($4,250)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Armor L3', 6500, this)">Armor L3 ($6,500)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Armor L4', 10450, this)">Armor L4 ($10,450)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Armor L5', 19500, this)">Armor L5 ($19,500)</button>
-
+  
         <button class="upgrade-btn" onclick="toggleUpgrade('Brakes L1', 3000, this)">Brakes L1 ($3,000)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Brakes L2', 4250, this)">Brakes L2 ($4,250)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Brakes L3', 6500, this)">Brakes L3 ($6,500)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Brakes L4', 11000, this)">Brakes L4 ($11,000)</button>
-
+  
         <button class="upgrade-btn" onclick="toggleUpgrade('Trans L1', 3000, this)">Trans L1 ($3,000)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Trans L2', 4250, this)">Trans L2 ($4,250)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Trans L3', 6500, this)">Trans L3 ($6,500)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Trans L4', 14250, this)">Trans L4 ($14,250)</button>
-
+  
         <button class="upgrade-btn" onclick="toggleUpgrade('Suspension L1', 3000, this)">Susp L1 ($3,000)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Suspension L2', 4250, this)">Susp L2 ($4,250)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Suspension L3', 6500, this)">Susp L3 ($6,500)</button>
@@ -338,7 +336,6 @@
       
       <div class="sub-header">Engine</div>
       <div class="grid-list">
-        <!-- UPDATED ENGINE PRICES -->
         <button class="upgrade-btn" onclick="toggleUpgrade('Engine 1', 3000, this)">Engine 1 ($3,000)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Engine 2', 4250, this)">Engine 2 ($4,250)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Engine 3', 6500, this)">Engine 3 ($6,500)</button>
@@ -359,9 +356,9 @@
       </div>
     </div>
     
-    <!-- COLUMN 2: COSMETICS -->
+    <!-- COLUMN 2: COSMETICS - BODYWORK -->
     <div class="column">
-      <h2>Cosmetics</h2>
+      <h2>Cosmetics - Bodywork</h2>
       <div class="sub-header">Bodywork</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="toggleUpgrade('Left Door', 500, this)">Left Door ($500)</button>
@@ -384,7 +381,11 @@
         <button class="upgrade-btn" onclick="toggleUpgrade('Exhaust', 500, this)">Exhaust ($500)</button>
         <button class="upgrade-btn" onclick="toggleUpgrade('Strut', 500, this)">Strut ($500)</button>
       </div>
-      
+    </div>
+    
+    <!-- COLUMN 3: COSMETICS - EXTRAS (Interior, Lighting, Window Tint, Wheels) -->
+    <div class="column">
+      <h2>Cosmetics - Extras</h2>
       <div class="sub-header">Lighting</div>
       <div class="grid-list">
         <button class="upgrade-btn" onclick="toggleUpgrade('Xenon Lights', 1100, this)">Xenon Lights ($1,100)</button>
@@ -441,7 +442,7 @@
       </div>
     </div>
     
-    <!-- COLUMN 3: RESPRAY -->
+    <!-- COLUMN 4: RESPRAY -->
     <div class="column">
       <h2>Respray</h2>
       <div class="grid-list">
@@ -508,7 +509,6 @@
     function toggleUpgrade(name, price, button) {
       const existingIndex = upgrades.findIndex(u => u.name === name);
       if (existingIndex !== -1) {
-        // Remove the upgrade if it exists
         addLog(`Removed ${name} upgrade for $${upgrades[existingIndex].price}.`);
         total -= upgrades[existingIndex].price;
         upgrades.splice(existingIndex, 1);
@@ -570,7 +570,6 @@ Upgrades Purchased: ${upgradesPurchased}
 Price Charged: $${finalCost}
 SHOP: Twenty's`;
       document.getElementById('summaryOutput').textContent = summary;
-      // Log the full customer detail entry
       addLog("Customer Detail Entry:\n" + summary);
     }
   
@@ -599,11 +598,9 @@ SHOP: Twenty's`;
     }
   
     function renderLogs() {
-      // Update the basic log (most recent log)
       const basicLog = document.getElementById('basic-log');
       basicLog.textContent = logs.length ? logs[logs.length - 1] : "No logs yet.";
   
-      // Update the full logs list with individual delete buttons
       const logsList = document.getElementById('logs-list');
       logsList.innerHTML = '';
       logs.forEach((log, index) => {
