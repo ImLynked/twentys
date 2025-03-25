@@ -5,7 +5,7 @@
   <title>Twenty's Autobody Mechanic</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="icon" href="https://cdn.discordapp.com/attachments/1063986906758656021/1069631356830760981/Twentys_Logo.png?ex=67e36c14&is=67e21a94&hm=123ce4085f3856ecdcb33c70ec0e2f9be3461f097bf6f9674ef212ee04f303f7&" type="image/png">
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/1063986906758656021/1069631356830760981/Twentys_Logo.png?ex=67e2c354&is=67e171d4&hm=11910ced93674352c79c4ece67e68da5d175d0c335ec61204e727bbf092d370c&" type="image/png">
   <style>
     /* BASIC RESET */
     * {
@@ -228,6 +228,21 @@
     }
     .reset-btn:hover {
       background: #bbb;
+    }
+    
+    /* New Reset Upgrades Button styling */
+    .reset-upgrades-btn {
+      margin-top: 5px;
+      padding: 6px 12px;
+      background: #ffc107;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      color: #000;
+      font-weight: 700;
+    }
+    .reset-upgrades-btn:hover {
+      background: #e0a800;
     }
     
     /* CUSTOMER FORM */
@@ -560,6 +575,7 @@
     <ul id="selected-upgrades"></ul>
     <h3>Total Price: $<span id="total-price">0</span></h3>
     <button class="reset-btn" onclick="resetAll()">Reset All</button>
+    <button class="reset-upgrades-btn" onclick="resetUpgradesOnly()">Reset Upgrades</button>
   </div>
   
   <!-- CUSTOMER FORM & SUMMARY -->
@@ -673,6 +689,16 @@
       renderUpgrades();
     }
     
+    // New function: Reset only upgrades.
+    function resetUpgradesOnly() {
+      total = 0;
+      upgrades = [];
+      renderUpgrades();
+      addLog("Reset upgrades.");
+      document.querySelectorAll(".upgrade-btn.selected").forEach(btn => btn.classList.remove("selected"));
+    }
+    
+    // Reset all clears upgrades, customer details, search, and summary output.
     function resetAll() {
       total = 0;
       upgrades = [];
@@ -682,6 +708,7 @@
       document.getElementById('plate').value = "";
       document.getElementById('repairFee').value = "";
       document.getElementById('searchBox').value = "";
+      document.getElementById('summaryOutput').textContent = ""; // Clear summary
       addLog("Reset all upgrades and customer details.");
       document.querySelectorAll(".upgrade-btn.selected").forEach(btn => btn.classList.remove("selected"));
     }
