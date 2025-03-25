@@ -49,9 +49,12 @@
       font-weight: 700;
     }
     
-    /* FIND BOX */
-    #find-container {
-      text-align: center;
+    /* SEARCH & MECHANIC CONTAINER */
+    #search-mechanic-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
       margin: 10px 20px;
     }
     #searchBox {
@@ -63,18 +66,16 @@
     
     /* IS MECHANIC SLIDER (Toggle Switch) */
     .mechanic-toggle {
-      text-align: center;
-      margin: 10px 20px;
+      display: flex;
+      align-items: center;
       color: #fff;
       font-size: 1rem;
     }
-    /* Toggle switch styling */
     .switch {
       position: relative;
       display: inline-block;
       width: 50px;
       height: 25px;
-      vertical-align: middle;
     }
     .switch input { 
       opacity: 0;
@@ -155,7 +156,7 @@
       margin-bottom: 10px;
     }
     
-    /* UPGRADE BUTTONS */
+    /* UPGRADE BUTTONS - More visually appealing */
     .upgrade-btn {
       background: linear-gradient(145deg, #2a2d38, #3a3f48);
       border: 1px solid #444a5a;
@@ -178,7 +179,6 @@
       border: 1px solid #007bff;
       box-shadow: 4px 4px 12px rgba(0,0,0,0.6);
     }
-    /* Highlight style for search matches */
     .upgrade-btn.highlighted {
       background: linear-gradient(145deg, #ffeb3b, #fbc02d);
       border-color: #fdd835;
@@ -373,63 +373,17 @@
     </div>
   </header>
   
-  <!-- FIND BOX -->
-  <div id="find-container">
+  <!-- SEARCH & MECHANIC CONTAINER -->
+  <div id="search-mechanic-container">
     <input type="text" id="searchBox" placeholder="Search upgrades...">
+    <div class="mechanic-toggle">
+      <label class="switch">
+        <input type="checkbox" id="isMechanicCheckbox" onchange="toggleMechanic(this)">
+        <span class="slider"></span>
+      </label>
+      <span style="margin-left: 10px; vertical-align: middle;">Is Mechanic</span>
+    </div>
   </div>
-  
-  <!-- IS MECHANIC SLIDER -->
-  <div class="mechanic-toggle">
-    <label class="switch">
-      <input type="checkbox" id="isMechanicCheckbox" onchange="toggleMechanic(this)">
-      <span class="slider"></span>
-    </label>
-    <span style="margin-left: 10px; vertical-align: middle;">Is Mechanic</span>
-  </div>
-  
-  <!-- Toggle switch CSS -->
-  <style>
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 25px;
-      vertical-align: middle;
-    }
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 25px;
-    }
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 19px;
-      width: 19px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: .4s;
-      border-radius: 50%;
-    }
-    input:checked + .slider {
-      background-color: #007bff;
-    }
-    input:checked + .slider:before {
-      transform: translateX(25px);
-    }
-  </style>
   
   <!-- 4-COLUMN LAYOUT -->
   <div class="columns-container">
@@ -635,7 +589,7 @@
     // Render logs on page load
     renderLogs();
     
-    // Discount function updated to include engine and mechanical discounts
+    // Discount function updated to include additional discounts for engine and mechanical
     function getDiscount(category) {
       if (!isMechanic) return 0;
       switch(category) {
@@ -701,11 +655,17 @@
       document.getElementById('vehicle').value = "";
       document.getElementById('plate').value = "";
       document.getElementById('repairFee').value = "";
+      document.getElementById('searchBox').value = "";
       addLog("Reset all upgrades and customer details.");
+      // Unselect all upgrade buttons
+      document.querySelectorAll(".upgrade-btn.selected").forEach(btn => btn.classList.remove("selected"));
     }
     
     function generateSummary() {
-      const name = document.getElementById('customerName').value || "N/A";
+      let customerName = document.getElementById('customerName').value || "N/A";
+      if(isMechanic) {
+        customerName += " [MECH]";
+      }
       const vehicle = document.getElementById('vehicle').value || "N/A";
       const plate = document.getElementById('plate').value || "N/A";
       const repairFeeInput = parseFloat(document.getElementById('repairFee').value) || 0;
@@ -713,7 +673,7 @@
       const finalCost = total + repairFee;
       const upgradesPurchased = upgrades.map(u => u.name).join(', ') || "None";
       const summary =
-`Customer Name: ${name}
+`Customer Name: ${customerName}
 Vehicle | [Make/Model]: ${vehicle}
 Plate: ${plate}
 Upgrades Purchased: ${upgradesPurchased}
