@@ -5,7 +5,7 @@
   <title>Twenty's Autobody Mechanic</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="icon" href="https://cdn.discordapp.com/attachments/1063986906758656021/1069631356830760981/Twentys_Logo.png?ex=67e36c14&is=67e21a94&hm=123ce4085f3856ecdcb33c70ec0e2f9be3461f097bf6f9674ef212ee04f303f7&" type="image/png">
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/1063986906758656021/1069631356830760981/Twentys_Logo.png?ex=67e2c354&is=67e171d4&hm=11910ced93674352c79c4ece67e68da5d175d0c335ec61204e727bbf092d370c&" type="image/png">
   <style>
     /* BASIC RESET */
     * {
@@ -49,12 +49,6 @@
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-    }
-    
-    /* BANNER IMAGE (Imgur Embed) */
-    .banner-image {
-      text-align: center;
-      margin: 15px 20px;
     }
     
     /* SEARCH & MECHANIC CONTAINER */
@@ -235,6 +229,8 @@
     .reset-btn:hover {
       background: #bbb;
     }
+    
+    /* New Reset Upgrades Button styling */
     .reset-upgrades-btn {
       margin-top: 5px;
       padding: 6px 12px;
@@ -296,6 +292,7 @@
     .generate-btn:hover {
       background: #0056c1;
     }
+    /* Copy to Clipboard Button */
     .copy-btn {
       margin-top: 10px;
       padding: 8px 16px;
@@ -348,7 +345,6 @@
       font-size: 1rem;
       transition: background 0.3s ease;
       margin-bottom: 10px;
-      font-weight: 600;
     }
     .toggle-btn:hover {
       background: #0056c1;
@@ -409,12 +405,6 @@
       </div>
     </div>
   </header>
-  
-  <!-- BANNER IMAGE: Imgur Embed -->
-  <div class="banner-image">
-    <blockquote class="imgur-embed-pub" lang="en" data-id="a/EXCgB9L" data-context="false"><a href="//imgur.com/a/EXCgB9L"></a></blockquote>
-    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-  </div>
   
   <!-- SEARCH & MECHANIC CONTAINER -->
   <div id="search-mechanic-container">
@@ -718,7 +708,7 @@
       document.getElementById('plate').value = "";
       document.getElementById('repairFee').value = "";
       document.getElementById('searchBox').value = "";
-      document.getElementById('summaryOutput').textContent = "";
+      document.getElementById('summaryOutput').textContent = ""; // Clear summary
       addLog("Reset all upgrades and customer details.");
       document.querySelectorAll(".upgrade-btn.selected").forEach(btn => btn.classList.remove("selected"));
     }
