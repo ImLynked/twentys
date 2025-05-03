@@ -727,18 +727,20 @@
     
     // Reset all clears upgrades, customer details, search, and summary output.
     function resetAll() {
-      total = 0;
-      upgrades = [];
-      renderUpgrades();
-      document.getElementById('customerName').value = "";
-      document.getElementById('vehicle').value = "";
-      document.getElementById('plate').value = "";
-      document.getElementById('repairFee').value = "";
-      document.getElementById('searchBox').value = "";
-      document.getElementById('summaryOutput').textContent = "";
-      addLog("Reset all upgrades and customer details.");
-      document.querySelectorAll(".upgrade-btn.selected").forEach(btn => btn.classList.remove("selected"));
-    }
+  total = 0;
+  upgrades = [];
+  renderUpgrades();
+  document.getElementById('customerName').value = "";
+  document.getElementById('vehicle').value = "";
+  document.getElementById('plate').value = "";
+  document.getElementById('repairFee').value = "";
+  document.getElementById('searchBox').value = "";
+  document.getElementById('summaryOutput').textContent = "";
+  document.getElementById('isMechanicCheckbox').checked = false; // Reset toggle switch
+  isMechanic = false; // Reset mechanic discount flag
+  addLog("Reset all upgrades and customer details.");
+  document.querySelectorAll(".upgrade-btn.selected").forEach(btn => btn.classList.remove("selected"));
+}
     
     function generateSummary() {
       let customerName = document.getElementById('customerName').value || "N/A";
