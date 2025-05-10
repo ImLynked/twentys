@@ -57,6 +57,7 @@
     header h1 {
       background: linear-gradient(135deg, #007bff, #ff66cc);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 24px;
       margin: 0;
@@ -623,6 +624,10 @@
         <label for="repairFee">Repair Fee:</label>
         <input type="number" id="repairFee" placeholder="Enter Repair Fee" />
       </div>
+      <div class="form-row">
+        <label for="notes">Additional Notes:</label>
+        <input type="text" id="notes" placeholder="Enter any additional notes">
+      </div>
       <button class="generate-btn" onclick="generateSummary()">Generate Summary</button>
       <div id="summaryOutput"></div>
       <!-- Copy to Clipboard Button -->
@@ -861,13 +866,13 @@ SHOP: Twenty's`;
     }
   </style>
   
-  <script>
+  <style>
     @keyframes flashAnimation {
       0% { background: linear-gradient(145deg, #2a2d38, #3a3f48); }
       50% { background: linear-gradient(145deg, #ffeb3b, #fbc02d); }
       100% { background: linear-gradient(145deg, #2a2d38, #3a3f48); }
     }
-  </script>
+  </style>
   
 </div> <!-- End outer-container -->
 
